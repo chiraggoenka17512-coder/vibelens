@@ -41,10 +41,24 @@ export default function Home() {
           <span className="text-[#94a3b8]">Now see what you built.</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mb-10 leading-relaxed">
+        <p className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mb-6 leading-relaxed">
           Autonomous 3D Codebase X-Ray, ReachableSec SAST &amp; Dual MCP Prevention Engine.
           Transforming AI-generated code chaos into mathematically verified architecture.
         </p>
+
+        {/* Primary CTA: Launch 3D City View */}
+        <div className="flex flex-wrap items-center gap-4 mb-10">
+          <a
+            href="/app/xray"
+            className="px-5 py-3 bg-[#111115] hover:bg-white/10 border border-[#06b6d4] text-[#06b6d4] font-mono text-xs font-bold tracking-wider transition-colors inline-flex items-center gap-2"
+          >
+            <span>🏙️</span>
+            <span>[LAUNCH 3D CITY VIEW // SPATIAL ARCHITECTURE]</span>
+          </a>
+          <span className="font-mono text-xs text-[#64748b]">
+            Stable treemap layout with wiring toggle active
+          </span>
+        </div>
 
         {/* 4-Tier Semantic Telemetry Indicators */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
