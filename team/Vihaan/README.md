@@ -11,6 +11,9 @@ You build the flagship visual experience and the AI agent integration bridge of 
 1. **3D Spatial X-Ray Galaxy Canvas:** Uses Three.js and `@react-three/fiber` to ingest Rajveer's ReachableSec JSON DAG and render an interactive, beautiful 3D topology of the codebase.
 2. **ContextRelay MCP Server & Tools:** Implements the Model Context Protocol (MCP) server so Cursor, Claude Code, and Windsurf can query VibeLens with 0 prompt token overhead.
 
+### 🚫 Strict Rule: ZERO GRADIENTS
+* No blurry gradient orbs, no colorful background washes. Keep the WebGL background solid void black (`#060608`). Let the clean geometric nodes and crisp solid laser lines do all the visual work.
+
 ---
 
 ## 📂 Your Files & Directories

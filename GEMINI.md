@@ -22,14 +22,14 @@ VibeLens is a local-first codebase hygiene, vulnerability reachability, and 3D a
 VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framework:
 
 1. **No White Screen Default:** Canvas must use obsidian/pitch black (`#09090b` or `#050507`) with high-contrast neutral text.
-2. **CAD Blueprint & Grid Markings:** Subtle grid coordinate markings (`[+000, +000]`), technical crosshairs, and dot matrices.
-3. **Hardware Monospace Telemetry:** Monospace typography (Geist Mono / JetBrains Mono) for status chips, pings, vector clocks, and token metrics:
+2. **ZERO GRADIENTS (Strict Rule):** Absolutely NO CSS gradients (`bg-gradient-to-...`), no radial gradients, and no blurry colored gradient orbs/blobs. All surfaces must be solid matte planes (`#060608`, `#09090b`, `#111115`) with sharp 1px borders (`border-white/10`).
+3. **CAD Blueprint & Grid Markings:** Subtle grid coordinate markings (`[+000, +000]`), technical crosshairs, and dot matrices.
+4. **Hardware Monospace Telemetry:** Monospace typography (Geist Mono / JetBrains Mono) for status chips, pings, vector clocks, and token metrics:
    - `[STATUS: ACTIVE // 12ms]`
    - `[DAG_NODES: 72 // RESIDUAL: 0.04]`
    - `[CVE_FILTER: 88.6% SILENCED]`
-4. **Tactile Glassmorphism:** Layer `backdrop-blur-md` with `bg-zinc-950/60` and subtle translucent borders (`border-white/10`).
-5. **Interactive Glow Feedback:** All clickable elements must feature `:hover` and `:active` scale/glow states.
-6. **4-Tier Color Conventions:**
+5. **Tactile Matte Panels (No Heavy Blur Lag):** Use crisp, solid translucent panels (`bg-zinc-950/85 border border-white/10`) without expensive dynamic `backdrop-blur` during scroll to ensure guaranteed 60–120 FPS.
+6. **4-Tier Color Conventions (Solid Pure Hues):**
    - 🔴 **Red (`#ef4444`):** Reachable zero-day exploit paths / Critical vulnerabilities.
    - 🟠 **Orange (`#f97316`):** Likely indirect paths / Blast radius breaking callers.
    - 🟡 **Yellow (`#f59e0b`):** AI Vibe Slop / Duplicate helper clusters / Unknown dynamic code.

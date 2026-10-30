@@ -11,9 +11,13 @@
 
 VibeLens adheres strictly to the **CrashLens Industrial Telemetry** design framework: zero white-screen defaults, pitch-black obsidian backgrounds, CAD blueprint precision crosshairs, and live monospace telemetry chips.
 
+### 🚫 Strict Invariant: Zero Gradients
+* **BANNED:** Absolutely NO CSS gradients (`bg-gradient-to-...`), no radial background glows, no rainbow mesh gradients, and no blurry gradient blobs. Gradients are the signature of cheap AI templates.
+* **MANDATORY:** Pure solid matte surfaces (`#060608`, `#09090b`, `#111115`), crisp 1px hairline borders (`border-white/10` or `border-zinc-800`), and razor-sharp solid color signals.
+
 ### 1.1 Color Palette & Token Conventions
-* **Void Background:** `#060608` (Base WebGL & Page Canvas)
-* **Surface Panels:** `#09090b` layered with `backdrop-blur-md bg-zinc-950/60` and `border border-white/10`
+* **Void Background:** Solid `#060608` (Base WebGL & Page Canvas)
+* **Surface Panels:** Solid matte `#09090b` or `#111115` with `border border-white/10` (no heavy dynamic blur lag)
 * **Text Hierarchy:** High-contrast neutral `#f8fafc` (Headings), `#94a3b8` (Body/Subtitles), `#64748b` (Muted CAD labels)
 * **The 4-Tier Semantic Signals:**
   * 🔴 **Neon Red (`#ef4444`):** Reachable zero-day exploit paths / Verified vulnerability attack vectors.
