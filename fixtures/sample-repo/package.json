@@ -1,0 +1,20 @@
+{
+  "name": "sample-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mock AI vibe-coded application for ReachableSec SAST and 3D X-Ray AST analysis",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

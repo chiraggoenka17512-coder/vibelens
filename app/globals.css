@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #060608;
+  --foreground: #f8fafc;
+  --void: #060608;
+  --surface-matte: #09090b;
+  --surface-elevated: #111115;
+  --telemetry-red: #ef4444;
+  --telemetry-orange: #f97316;
+  --telemetry-yellow: #f59e0b;
+  --telemetry-emerald: #10b981;
+  --telemetry-cyan: #06b6d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CAD Blueprint styling: Pure solid matte surfaces with 1px hairline borders */
+.cad-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cad-crosshair::before {
+  content: "+";
+  position: absolute;
+  font-family: var(--font-geist-mono), monospace;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+}
