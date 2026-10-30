@@ -39,7 +39,8 @@ Millions of developers, students, and founders are now **"vibe coding"** using t
 4. **Interactive Blast Radius Inspector:** Click any node in the 3D mesh to instantly see every upstream route that breaks if the file is deleted, and every downstream package it requires (solving Problem #5).
 5. **Frontend De-Slop Engine (CrashLens Reskin):** Ingests messy, generic AI frontend code and compiles it into the high-craft CrashLens industrial design language (obsidian `#09090b`, CAD blueprint crosshairs, monospace status chips, and glassmorphic panels) with a live split slider.
 6. **VibeWatcher CLI Sentinel (`npx vibelens watch`):** A 1Hz background terminal daemon that catches duplicate functions and insecure packages in real time during prompting.
-7. **Test-Gated Safe-Merge PR:** Automatically executes the repository's native test suite (`npm test`) before opening an authenticated GitHub Pull Request.
+7. **Zero-Token ContextRelay Engine:** A deterministic AST state snapshot (`.vibelens/handover.json`) that enables lossless context transfer between agents (Cursor, Claude Code, Windsurf, or new chats) in ~380 tokens—delivering a 99.2% token savings over raw code dumps.
+8. **Test-Gated Safe-Merge PR:** Automatically executes the repository's native test suite (`npm test`) before opening an authenticated GitHub Pull Request.
 
 ---
 

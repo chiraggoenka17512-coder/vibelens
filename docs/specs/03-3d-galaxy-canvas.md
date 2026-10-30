@@ -2,12 +2,13 @@
 
 > **Module:** Visual Observability & Interactive Topology  
 > **Framework:** Three.js via `@react-three/fiber` & `@react-three/drei`  
-> **UI Layer:** Tailwind CSS v4 + `shadcn/ui` (CrashLens Industrial Design System)
+> **UI Layer:** Tailwind CSS v4 + `shadcn/ui` (CrashLens Industrial Design System)  
+> **Master Design Spec:** `docs/FINALIZED_FRONTEND_DESIGN_A.md`
 
 ---
 
 ## 1. Overview
-Renders the repository as an interactive 3D WebGL galaxy against an obsidian canvas (`#09090b`), displaying real-time telemetry, node clustering, and bidirectional blast radius inspection.
+Renders the repository as an interactive 3D WebGL galaxy against an obsidian canvas (`#060608`), displaying real-time telemetry, node clustering, and bidirectional blast radius inspection.
 
 ## 2. Visual Encodings & Shaders
 * **Emerald Nodes (`#10b981`):** Clean, active modules with zero dead dependencies.

@@ -25,6 +25,11 @@
 # Vercel
 .vercel
 
+# Office temp files
+~$*
+*.tmp
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
