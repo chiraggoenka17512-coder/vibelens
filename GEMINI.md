@@ -15,6 +15,7 @@ VibeLens is a local-first codebase hygiene, vulnerability reachability, and 3D a
 4. **Never open a GitHub Pull Request without running the local test suite.** Automated merges and refactors must execute `npm test` / `vitest` locally first. If any test fails, abort the refactor and log the failure.
 5. **Stick strictly to the JavaScript / TypeScript / React stack.** No foreign language runtimes (no Python, no Rust, no Go binary wrappers).
 6. **Local Embeddings Only (Zero Cloud Leaks).** Never call cloud embedding APIs (OpenAI, Voyage, etc.) with repository symbols or user feature prompts. Intent-to-AST matching must execute 100% locally on-device using quantized sentence transformers (`all-MiniLM-L6-v2` / `bge-small` via Transformers.js in WebAssembly / Node.js). Zero API keys required.
+7. **Local Location Calibration Contract.** User location/city selected during sign-up or onboarding is stored strictly on-device in `.vibelens/config.json` and browser `localStorage`. Zero geolocation tracking or external cloud IP queries.
 
 ---
 
@@ -29,6 +30,7 @@ VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framewo
    - `[STATUS: ACTIVE // 12ms]`
    - `[DAG_NODES: 72 // RESIDUAL: 0.04]`
    - `[CVE_FILTER: 88.6% SILENCED]`
+   - `[GRID: BLR // 12.9716° N, 77.5946° E]`
 5. **Tactile Matte Panels (No Heavy Blur Lag):** Use crisp, solid translucent panels (`bg-zinc-950/85 border border-white/10`) without expensive dynamic `backdrop-blur` during scroll to ensure guaranteed 60–120 FPS.
 6. **4-Tier Color Conventions (Solid Pure Hues):**
    - 🔴 **Red (`#ef4444`):** Reachable zero-day exploit paths / Critical vulnerabilities.
@@ -53,6 +55,7 @@ VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framewo
    - Three.js WebGL canvas (`@react-three/fiber`) and interactive sliders are strictly `"use client"`.
 3. **Spatial 3D Architecture:**
    - **City View (Folder-Based Treemap):** The primary default spatial view. 100% deterministic, zero simulation drift, permanent pin anchoring.
+   - **Personalized Metropolitan Grids:** Incorporates the user's home location chosen during sign-up/onboarding (`BLR`, `SFO`, `NYC`, `LHR`, `HND`, `BER`) to calibrate district boundaries, bridges, and aerospace telemetry (`[GRID: BLR // 12.97° N, 77.59° E]`).
    - **Wiring Graph:** The secondary view behind the toggle. Both views share the identical underlying data model and selection state.
 4. **Tri-Bridge Universal Agent & IDE Connector (Apps & Web):**
    - **Bridge 1 (Desktop IDE Apps):** Standalone stdio/HTTP MCP server (`bin/mcp-server.js` & `lib/mcp/`) for Cursor, Claude Code, and Windsurf.
@@ -61,4 +64,3 @@ VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framewo
 5. **The Zero-Slop Prompt Compiler:**
    - Combines local quantized `all-MiniLM-L6-v2` dense vectors with exact AST keyword matching.
    - Intercepts developer feature intents, searches local symbols, and compiles a surgical ~140-token guardrail instruction before the coding agent writes code.
-

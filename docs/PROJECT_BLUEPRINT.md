@@ -55,6 +55,52 @@ Developers are generating entire software systems via natural language prompts. 
 
 ---
 
+### 4.1 Spatial 3D Architecture: City View & Personalized Metropolitan Grids
+
+> **Assigned Lead:** 🌌 **Vihaan** (`team/Vihaan/README.md`)  
+> **Status:** APPROVED & ARCHITECTED  
+
+1. **City View (Deterministic Folder-Based Treemap):**
+   - Uses squarified treemap algorithms (`src/lib/city/layout.ts`) providing 100% deterministic layout, zero simulation drift, and permanent spatial coordinate stability.
+   - Building height scaled by Lines of Code (LOC): $\text{Height} = \text{clamp}(1.0, 14.0, \sqrt{\text{LOC}} \times 0.7)$.
+   - Multi-state building geometry: Emerald lit windows for healthy code, red scaffolding/flooding for vulnerable nodes, and dim zinc ghost states for dead packages.
+2. **Personalized Metropolitan Grid (Sign-Up Location Calibration):**
+   - **The Onboarding Moment ("Calibrate Your Grid"):** During sign-up/onboarding (`npx vibelens init` or web sign-in), the developer selects their home city ("Where are you building from?").
+   - **Local Storage Contract:** Stored locally in `.vibelens/config.json` and client `localStorage`. Zero cloud tracking.
+   - **Aerospace Telemetry Chip:** Top-notch omnibar and HUD display live grid coordinates: `[GRID: BLR // 12.9716° N, 77.5946° E]`.
+   - **Pre-Bundled Metro Blueprints (`src/lib/city/metro-presets.ts`):**
+     - 🇮🇳 **Bengaluru (`BLR` - 12.9716° N, 77.5946° E):** Outer ring road tech corridors hold dependencies; central CBD houses public API routes.
+     - 🌁 **San Francisco (`SFO` - 37.7749° N, 122.4194° W):** Peninsula layout with Bay Bridge & Golden Gate cross-bay reachability arcs.
+     - 🗽 **New York City (`NYC` - 40.7128° N, 74.0060° W):** Manhattan street grid with towering skyscrapers and waterfront avenues.
+     - 🇬🇧 **London (`LHR` - 51.5074° N, 0.1278° W):** River Thames curve dividing server-side routes and client components.
+     - 🗼 **Tokyo (`HND` - 35.6762° N, 139.6503° E):** Yamanote radial railway ring and Tokyo Bay maritime utilities.
+     - 🇩🇪 **Berlin (`BER` - 52.5200° N, 13.4050° E):** Spree river arteries and clean Bauhaus architectural blocks.
+3. **Wiring Graph & On-Demand Reachability Lasers:**
+   - 3D orbital force-directed dependency view behind the UI toggle.
+   - 0 laser arcs by default; on-demand red laser arcs (`#ef4444`) dynamically trace the verified attack path when an infected node is selected.
+
+---
+
+### 4.2 The Zephium UI Aesthetic & Shell Architecture
+
+> **Assigned Lead:** 👑 **Chirag** (`team/Chirag/README.md`)  
+> **Benchmark:** `zephium.app` & `zephium-browser/website` on GitHub  
+
+1. **Top-Notch Omnibar / Command Palette:**
+   - Translucent capsule search bar nestled into the top center margin (`backdrop-blur-md bg-white/5 border border-white/10 rounded-full`).
+   - Integrated with the Zero-Slop Prompt Compiler: `[ 🔍 Search codebase symbols or natural language intent... (⌘K) ]`.
+2. **Floating Left Dock Rail:**
+   - 48px vertical rail providing instant switching between `[City View]`, `[Wiring Graph]`, `[SAST Laser]`, `[Blast Radius]`, and `[MCP Bridge]`.
+3. **Floating Bottom Telemetry Capsules:**
+   - Precision monospace pills at the footer displaying real-time metrics:
+     `[🛡️ 88.6% CVEs Silenced]` `[⚡ 12ms AST Latency]` `[💥 1 Active Attack Path]`.
+4. **Halftone Dot-Matrix Horizon Dissolve:**
+   - Night sky and atmospheric backgrounds dissolve into the `#09090b` ground via mathematical halftone stippling, completely eliminating cheap blurry CSS gradients.
+5. **Graphite Neutral Token System:**
+   - Ground (`#09090b`), Plate (`#111113`), Surface (`#18181b`), Raised (`#212125`), Hairline borders (`rgb(255 255 255 / 0.07)`).
+
+---
+
 ## 5. The ReachableSec 4-Tier Confidence Model
 
 In enterprise security, wrongly silencing an active vulnerability is catastrophic. Because static analysis cannot deterministically trace dynamic code evaluation (such as `eval()`, dynamic `require()`, or runtime reflection), ReachableSec introduces an honest, four-tier confidence classification:
@@ -265,4 +311,3 @@ Across 10 open-source repositories built predominantly with AI vibe coding (Curs
 ### 12.2 Business & Distribution Model
 * **Open-Core Developer Tier (Free):** 100% free local CLI (`npx vibelens`), MCP server integration for Cursor/Claude, and local 3D visualization.
 * **Enterprise & Team Tier (Paid SaaS):** $29/developer/month for centralized organization vulnerability telemetry, automated CI/CD PR gating, and compliance reachability audit logs.
-

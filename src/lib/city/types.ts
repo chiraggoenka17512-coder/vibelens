@@ -69,3 +69,19 @@ export interface CityLayout {
     depth: number;
   };
 }
+
+export interface MetroGridPreset {
+  id: string;
+  name: string;
+  country: string;
+  code: string; // e.g. "BLR", "SFO", "NYC", "LHR", "HND", "BER"
+  lat: string;
+  lon: string;
+  tagline: string;
+  districtLabels: {
+    core: string;      // Central Business District / Entrypoint routes
+    components: string;// Tech corridors / UI Modules
+    utils: string;     // Infrastructure / Docks
+    peripherals: string;
+  };
+}

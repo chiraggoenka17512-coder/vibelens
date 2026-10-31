@@ -14,6 +14,7 @@ Every agent generating or modifying code in this repository MUST strictly follow
 4. **Local Verification Gate (Never Commit Broken Tests):** Automated merges, refactors, and pull requests must execute `npm test` (`vitest run`) locally first. If any test fails, abort the refactor and report the error.
 5. **Pure JavaScript / TypeScript Stack:** Stick strictly to the Next.js / TypeScript / React ecosystem. No foreign language runtimes (no Python, no Rust, no Go binary wrappers).
 6. **Local Embeddings Only (Zero Cloud Leaks):** Never call cloud embedding APIs (OpenAI, Voyage, etc.) with repository symbols or user feature prompts. Intent-to-AST matching must execute 100% locally on-device using quantized sentence transformers (`all-MiniLM-L6-v2` / `bge-small` via Transformers.js in WebAssembly / Node.js). Zero API keys required.
+7. **Local Location Calibration Contract:** Location / city selected during sign-up or onboarding is stored strictly on-device in `.vibelens/config.json` and browser `localStorage`. Zero geolocation tracking or external cloud IP queries.
 
 ---
 
@@ -28,6 +29,7 @@ VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framewo
    - `[STATUS: ACTIVE // 12ms]`
    - `[DAG_NODES: 72 // RESIDUAL: 0.04]`
    - `[CVE_FILTER: 88.6% SILENCED]`
+   - `[GRID: BLR // 12.9716° N, 77.5946° E]`
 5. **Tactile Matte Panels (No Expensive Blur Lag):** Use crisp, solid translucent panels (`bg-zinc-950/85 border border-white/10`) without expensive dynamic `backdrop-blur` during scroll to ensure guaranteed 60–120 FPS.
 6. **4-Tier Pure Solid Hues:**
    - 🔴 **Red (`#ef4444`):** Reachable zero-day exploit paths / Critical vulnerabilities.
@@ -81,10 +83,13 @@ VibeLens is built to connect seamlessly to both desktop IDE agents and web-based
    - 100% deterministic squarified treemap layout.
    - Building heights derived deterministically from Lines of Code (LOC) clamped via `sqrt` scaling.
    - Pins & comments permanently anchored to file paths and AST function fingerprints.
-2. **Wiring Graph:**
+2. **Personalized Metropolitan Grids (Sign-Up Location Calibration):**
+   - Calibrates district boundary names and spatial topology to the user's home city selected during sign-up/onboarding (`BLR`, `SFO`, `NYC`, `LHR`, `HND`, `BER` via `src/lib/city/metro-presets.ts`).
+   - Displays real-time aerospace coordinates in the top omnibar: `[GRID: BLR // 12.9716° N, 77.5946° E]`.
+3. **Wiring Graph:**
    - Orbital 3D force-directed dependency view accessed via the UI toggle.
    - Shares identical selection state, node keys, and metrics with City View.
-3. **On-Demand Reachability Lasers:**
+4. **On-Demand Reachability Lasers:**
    - 0 laser arcs rendered by default to eliminate visual noise.
    - Red laser arcs render only when an infected/vulnerable node is actively selected.
 

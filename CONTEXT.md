@@ -12,8 +12,10 @@
 VibeLens cures the **"48-Hour Vibe Coding Hangover"** and enterprise DevSecOps alert fatigue:
 1. **ReachableSec 4-Tier SAST:** Traces static AST execution paths from public HTTP entrypoints down to third-party dependencies, mathematically proving that **88.6% of Dependabot CVE alerts are dead code** (dropping 35 scary alerts to 1 real exploit).
 2. **3D Spatial Architecture (City View & Wiring Graph):** Renders the repository as a deterministic squarified treemap software city with multi-state visual overlays (lit windows, scaffolding, flood zones, dim ghost) and an orbital 3D wiring graph toggle.
-3. **Tri-Bridge Universal Agent & IDE Connector:** Connects seamlessly to both desktop IDE apps (Cursor, Windsurf, Claude Code via MCP) and web AI platforms (v0.dev, Bolt.new, Lovable.dev via `.vibelens/handover.json` and 1-click clipboard relay).
-4. **Zero-Slop Prompt Compiler:** Uses a local on-device quantized embedding model (`all-MiniLM-L6-v2` / `bge-small` in ~23MB WASM) to map natural language feature intent to existing AST utilities, compiling ~140-token surgical guardrails before the coding agent writes code.
+3. **Personalized Metropolitan Grids (Sign-Up Location Calibration):** During onboarding, the developer selects their home city ("Where are you building from?"), calibrating the 3D software city layout and displaying live aerospace telemetry (`[GRID: BLR // 12.97° N, 77.59° E]`) across pre-bundled presets (Bengaluru, San Francisco, New York, London, Tokyo, Berlin).
+4. **Tri-Bridge Universal Agent & IDE Connector:** Connects seamlessly to both desktop IDE apps (Cursor, Windsurf, Claude Code via MCP) and web AI platforms (v0.dev, Bolt.new, Lovable.dev via `.vibelens/handover.json` and 1-click clipboard relay).
+5. **Zero-Slop Prompt Compiler:** Uses a local on-device quantized embedding model (`all-MiniLM-L6-v2` / `bge-small` in ~23MB WASM) to map natural language feature intent to existing AST utilities, compiling ~140-token surgical guardrails before the coding agent writes code.
+6. **The Zephium UI Aesthetic Architecture:** Emulates the hyper-minimalist craftsmanship of `zephium.app` and `zephium-browser/website` (Top-Notch Omnibar, Floating Left Dock Rail, Floating Bottom Telemetry Capsules, and mathematical halftone dot-matrix stippling into the `#09090b` graphite ground).
 
 ---
 
@@ -25,7 +27,8 @@ VibeLens cures the **"48-Hour Vibe Coding Hangover"** and enterprise DevSecOps a
 4. **Automated Safety Gate:** Never open a Pull Request without running local unit tests (`npm test` / `vitest`).
 5. **Pure JS/TS Stack:** No Python, Rust, or Go binary wrappers.
 6. **Local Embeddings Only:** Embedding inference runs 100% locally via Transformers.js in WebAssembly/Node.js. Zero API keys, zero cloud leaks, $0.00 token cost.
-7. **ZERO GRADIENTS & The Zephium Aesthetic Benchmark:** All surfaces are solid graphite matte planes (`#09090b`, `#111113`, `#18181b`) with hairline borders (`rgba(255,255,255,0.07)`), vibrant translucent glass capsules (`backdrop-blur-md bg-white/5`), halftone dot-matrix stippling, and Geist Mono telemetry inspired by `zephium.app` and `zephium-browser/website`.
+7. **ZERO GRADIENTS & The Zephium Aesthetic Benchmark:** All surfaces are solid graphite matte planes (`#09090b`, `#111113`, `#18181b`) with hairline borders (`rgba(255,255,255,0.07)`), vibrant translucent glass capsules (`backdrop-blur-md bg-white/5`), halftone dot-matrix stippling, and Geist Mono telemetry.
+8. **Local Location Calibration Contract:** Location captured during onboarding/sign-up is stored strictly on-device in `.vibelens/config.json` and browser `localStorage`. Zero geolocation tracking or external cloud IP queries.
 
 ---
 
@@ -33,9 +36,9 @@ VibeLens cures the **"48-Hour Vibe Coding Hangover"** and enterprise DevSecOps a
 
 | Teammate | Focus | Core Deliverables | Directory |
 | :--- | :--- | :--- | :--- |
-| **👑 Chirag** | **Master UI & Storytelling** | Whole UI shell, Bilingual Toggle, Optical Diagnostic Split Slider, 5-Act Journey | `team/Chirag/` & `app/` |
+| **👑 Chirag** | **Master UI & Zephium Shell** | Whole UI shell, Zephium Top Omnibar, Left Dock Rail, Bottom Status Pills, Onboarding Location Modal | `team/Chirag/` & `app/` |
 | **🛡️ Rajveer** | **ReachableSec SAST & Handover** | `@babel/parser` AST call-graph, 4-tier classifier, `.vibelens/handover.json` generator | `team/Rajveer/` & `src/lib/reachablesec/` |
-| **🌌 Vihaan** | **3D Spatial X-Ray & MCP** | Three.js City View & Wiring Graph, shader meshes, red laser arcs, MCP server tools | `team/Vihaan/` & `src/components/city/` |
+| **🌌 Vihaan** | **3D Spatial City & Metro Grids** | Three.js City View & Wiring Graph, Metro grid presets (BLR/SFO/NYC/LHR/HND/BER), red laser arcs, MCP tools | `team/Vihaan/` & `src/components/city/` |
 | **🔍 Aaryan** | **Blast Radius & Universal Bridge** | Slide-out HUD drawer, breaking callers, test-gated PR, REST API gateway, Clipboard Relay | `team/Aaryan/` & `src/components/hud/` |
 | **🛡️ Archit** | **VibeWatcher CLI Sentinel** | `npx vibelens watch` 1Hz daemon (`commander` + `chokidar`), terminal alert UI, 1-key auto-link | `team/Archit/` & `src/cli/` |
 
@@ -71,6 +74,7 @@ VibeLens cures the **"48-Hour Vibe Coding Hangover"** and enterprise DevSecOps a
 - **Master Workbench Page:** [`app/page.tsx`](file:///c:/Users/Chirag/Desktop/vibelens/app/page.tsx)
 - **3D Spatial X-Ray Route:** [`app/app/xray/page.tsx`](file:///c:/Users/Chirag/Desktop/vibelens/app/app/xray/page.tsx)
 - **City Layout Generator:** [`src/lib/city/layout.ts`](file:///c:/Users/Chirag/Desktop/vibelens/src/lib/city/layout.ts)
+- **Metropolitan Grid Presets:** [`src/lib/city/metro-presets.ts`](file:///c:/Users/Chirag/Desktop/vibelens/src/lib/city/metro-presets.ts)
 - **City Canvas:** [`src/components/city/city-canvas.tsx`](file:///c:/Users/Chirag/Desktop/vibelens/src/components/city/city-canvas.tsx)
 - **3D Wiring Graph:** [`src/components/xray/graph-canvas.tsx`](file:///c:/Users/Chirag/Desktop/vibelens/src/components/xray/graph-canvas.tsx)
 - **Pin & Comment System:** [`src/lib/city/pins.ts`](file:///c:/Users/Chirag/Desktop/vibelens/src/lib/city/pins.ts) & [`src/components/city/comment-panel.tsx`](file:///c:/Users/Chirag/Desktop/vibelens/src/components/city/comment-panel.tsx)
