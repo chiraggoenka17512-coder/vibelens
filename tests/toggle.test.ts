@@ -58,3 +58,4 @@ describe("View Toggle & Shared Selection (Step 5 & Acceptance Check 5)", () => {
     expect(selectedNodeId).toBe(vulnNode);
   });
 });
+

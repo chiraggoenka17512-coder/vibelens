@@ -74,3 +74,4 @@ When loading the sample repo in the default **City View**:
    - Clicking `node_modules/jsonwebtoken` instantly ignites a glowing neon red arc leaping through the air from `app/api/checkout/route.ts` to `jsonwebtoken`.
 5. **View Toggle:**
    - Clicking `[⚡ Wiring (Graph)]` transitions smoothly to the 3D orbital dependency graph while preserving the exact selection on `jsonwebtoken`.
+

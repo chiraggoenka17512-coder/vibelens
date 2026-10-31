@@ -181,3 +181,4 @@ export const SAMPLE_SCAN_RESULT: ScanResult = {
     },
   ],
 };
+

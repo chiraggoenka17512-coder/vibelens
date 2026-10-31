@@ -109,3 +109,4 @@ describe("Pins and Comments Anchor & Orphan Mechanics", () => {
     expect(orphanPin.x).toBeLessThan(layout.bounds.minX); // Placed in perimeter staging dock
   });
 });
+
