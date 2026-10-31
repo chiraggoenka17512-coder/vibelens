@@ -14,6 +14,7 @@ VibeLens is a local-first codebase hygiene, vulnerability reachability, and 3D a
 3. **Never upload raw source code to external servers.** All AST parsing, call-graph traversal, and file-watching must execute **100% locally on the developer's machine**. Only anonymized dependency names query the OSV/NVD CVE cache.
 4. **Never open a GitHub Pull Request without running the local test suite.** Automated merges and refactors must execute `npm test` / `vitest` locally first. If any test fails, abort the refactor and log the failure.
 5. **Stick strictly to the JavaScript / TypeScript / React stack.** No foreign language runtimes (no Python, no Rust, no Go binary wrappers).
+6. **Local Embeddings Only (Zero Cloud Leaks).** Never call cloud embedding APIs (OpenAI, Voyage, etc.) with repository symbols or user feature prompts. Intent-to-AST matching must execute 100% locally on-device using quantized sentence transformers (`all-MiniLM-L6-v2` / `bge-small` via Transformers.js in WebAssembly / Node.js). Zero API keys required.
 
 ---
 
@@ -45,6 +46,14 @@ VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framewo
 2. **Server Components vs. Client Components:**
    - Database reads and server actions stay in React Server Components (`app/`).
    - Three.js WebGL canvas (`@react-three/fiber`) and interactive sliders are strictly `"use client"`.
-3. **MCP Tooling Isolation:**
-   - Model Context Protocol server tools live in `lib/mcp/` and run as a standalone stdio process (`bin/mcp-server.js`).
+3. **Spatial 3D Architecture:**
+   - **City View (Folder-Based Treemap):** The primary default spatial view. 100% deterministic, zero simulation drift, permanent pin anchoring.
+   - **Wiring Graph:** The secondary view behind the toggle. Both views share the identical underlying data model and selection state.
+4. **Tri-Bridge Universal Agent & IDE Connector (Apps & Web):**
+   - **Bridge 1 (Desktop IDE Apps):** Standalone stdio/HTTP MCP server (`bin/mcp-server.js` & `lib/mcp/`) for Cursor, Claude Code, and Windsurf.
+   - **Bridge 2 (Web AI Platforms):** Deterministic 380-token AST state snapshot (`.vibelens/handover.json`) + 1-Click Clipboard Relay for v0.dev, Bolt.new, Lovable.dev, and Replit.
+   - **Bridge 3 (Browser Extensions & Web Tools):** Local CORS-enabled REST API (`app/api/vibelens/handover` & `app/api/vibelens/check-utility`).
+5. **The Zero-Slop Prompt Compiler:**
+   - Combines local quantized `all-MiniLM-L6-v2` dense vectors with exact AST keyword matching.
+   - Intercepts developer feature intents, searches local symbols, and compiles a surgical ~140-token guardrail instruction before the coding agent writes code.
 
