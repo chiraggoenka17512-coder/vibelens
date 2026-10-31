@@ -2,7 +2,22 @@
 
 > **Assigned Focus:** VibeWatcher CLI Sentinel (`npx vibelens watch`)  
 > **Relevant Specs:** `docs/specs/05-vibewatcher-cli.md`, `docs/specs/01-mcp-prevention.md`  
-> **Priority:** 🟡 Priority 4 (Days 6–12)
+> **Target Branch:** `feat/cli-archit`  
+> **Target Test Suite:** `tests/reachability.test.ts` & CLI tests
+
+---
+
+## 🤖 1-Click Prompt for Antigravity & Qoder
+> **Instructions for Archit:** When you open Antigravity or Qoder, copy-paste this prompt into the chat window:
+
+```text
+I am Archit working on feature branch feat/cli-archit.
+1. Read team/Archit/README.md, AGENTS.md, and GEMINI.md for my strict scope.
+2. My mission is building the VibeWatcher 1Hz CLI sentinel daemon in src/cli/ using commander and chokidar.
+3. Invariants: 100% pure TypeScript/Node.js. No native Python/Rust wrappers. Zero cloud uploads.
+4. Data Contract: Consume canonical_utilities from .vibelens/handover.json.
+5. Definition of Done: Your work is done ONLY when 'npm run verify' exits with 0 errors.
+```
 
 ---
 

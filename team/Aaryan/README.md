@@ -2,7 +2,22 @@
 
 > **Assigned Focus:** Blast Radius Inspector, Detail Telemetry HUD & **Universal Agent/IDE Connection Bridge (Apps & Web)**  
 > **Relevant Specs:** `docs/specs/03-3d-galaxy-canvas.md`, `docs/specs/06-zero-token-context-relay.md`, `docs/PROJECT_BLUEPRINT.md` (Section 6.4)  
-> **Priority:** 🟠 Priority 3 (Days 6–10)
+> **Target Branch:** `feat/blast-radius-aaryan`  
+> **Target Test Suite:** `tests/reachability.test.ts` & local API tests
+
+---
+
+## 🤖 1-Click Prompt for Antigravity & Qoder
+> **Instructions for Aaryan:** When you open Antigravity or Qoder, copy-paste this prompt into the chat window:
+
+```text
+I am Aaryan working on feature branch feat/blast-radius-aaryan.
+1. Read team/Aaryan/README.md, AGENTS.md, and GEMINI.md for my strict scope.
+2. My mission is implementing the Blast Radius HUD drawer in src/components/hud/ and the Tri-Bridge REST API in app/api/vibelens/.
+3. Invariants: ZERO CSS gradients. Matte panels with border-white/10. Test-gated PRs must run vitest first.
+4. Data Contract: Consume CodebaseNode & CodebaseEdge from src/types/graph.ts.
+5. Definition of Done: Your work is done ONLY when 'npm run verify' exits with 0 errors.
+```
 
 ---
 

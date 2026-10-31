@@ -1,0 +1,8 @@
+# VibeLens Core Rules
+# Architecture & Design System Invariants
+
+1. ZERO CSS GRADIENTS: Absolutely no `bg-gradient-to-...`, radial gradients, or blurred colored blobs. All UI surfaces must use solid graphite matte planes (#09090b, #111113, #18181b) with 1px border-white/10.
+2. HONEST REACHABILITY: Dynamic require(), eval(), and runtime reflection must ALWAYS be classified as 'Unknown'. Never guess or claim dynamic code is safe.
+3. LOCAL-FIRST: All AST parsing, call-graph traversal, and embeddings execute 100% locally on-device. Zero cloud code uploads. Zero cloud embedding API calls (use local quantized all-MiniLM-L6-v2 via Transformers.js).
+4. CONTRACT-FIRST: Import all shared types from `src/types/graph.ts` and `src/lib/city/types.ts`. Never invent custom node shapes or duplicate interfaces.
+5. VERIFICATION: You must run `npm test` and `npx tsc --noEmit` and confirm 0 errors before finishing any task.

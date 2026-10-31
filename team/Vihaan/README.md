@@ -2,7 +2,22 @@
 
 > **Assigned Focus:** 3D Spatial X-Ray City View, Personalized Metro Grids & MCP Server Tools  
 > **Relevant Specs:** `docs/specs/03-3d-galaxy-canvas.md`, `docs/specs/06-zero-token-context-relay.md`, `docs/specs/01-mcp-prevention.md`  
-> **Priority:** 🔴 Priority 2 (Days 4–8)
+> **Target Branch:** `feat/3d-xray-vihaan`  
+> **Target Test Suites:** `tests/layout.test.ts`, `tests/pins.test.ts`, `tests/metro.test.ts`
+
+---
+
+## 🤖 1-Click Prompt for Antigravity & Qoder
+> **Instructions for Vihaan:** When you open Antigravity or Qoder, copy-paste this prompt into the chat window:
+
+```text
+I am Vihaan working on feature branch feat/3d-xray-vihaan.
+1. Read team/Vihaan/README.md, AGENTS.md, and GEMINI.md for my strict scope.
+2. My mission is building the 3D City View treemap, metro presets, and Wiring Graph in src/components/city/ and src/lib/city/.
+3. Invariants: ZERO CSS gradients. Background must be solid graphite #09090b. Height scales with LOC.
+4. Data Contract: Consume ScanResult from src/types/graph.ts and CityLayout from src/lib/city/types.ts.
+5. Definition of Done: Your work is done ONLY when 'npm run verify' exits with 0 errors.
+```
 
 ---
 

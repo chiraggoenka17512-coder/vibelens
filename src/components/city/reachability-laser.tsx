@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import * as THREE from "three";
 import { ReachabilityArc } from "../../lib/city/reachability";
 
@@ -12,8 +12,9 @@ export function ReachabilityLaser({ arcs }: ReachabilityLaserProps) {
   if (!arcs || arcs.length === 0) return null;
 
   return (
-    <group>
+    <group name="reachability-lasers">
       {arcs.map((arc) => {
+        // Construct quadratic bezier curve for arc trajectory
         const curve = new THREE.QuadraticBezierCurve3(
           new THREE.Vector3(...arc.start),
           new THREE.Vector3(...arc.control),
@@ -26,7 +27,7 @@ export function ReachabilityLaser({ arcs }: ReachabilityLaserProps) {
         return (
           <group key={arc.edgeId}>
             {/* Core Red Laser Beam */}
-            <line geometry={geom}>
+            <line {...({ geometry: geom } as any)}>
               <lineBasicMaterial color="#ef4444" linewidth={3} />
             </line>
 
@@ -46,4 +47,3 @@ export function ReachabilityLaser({ arcs }: ReachabilityLaserProps) {
     </group>
   );
 }
-

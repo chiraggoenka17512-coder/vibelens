@@ -98,7 +98,7 @@ export function GraphCanvas({
             ]);
 
             return (
-              <line key={edge.id} geometry={geom}>
+              <line key={edge.id} {...({ geometry: geom } as any)}>
                 <lineBasicMaterial
                   color={lineColor}
                   linewidth={isRelatedToSelection || edge.isEntryPath ? 2 : 1}

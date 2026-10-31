@@ -1,7 +1,23 @@
 # 👑 Chirag
 
 > **Assigned Focus:** Master UI Architecture, Zephium Shell & Onboarding Experience  
-> **Relevant Specs:** `docs/FINALIZED_FRONTEND_DESIGN_A.md`, `docs/specs/04-frontend-deslop.md`
+> **Relevant Specs:** `docs/FINALIZED_FRONTEND_DESIGN_A.md`, `docs/specs/04-frontend-deslop.md`  
+> **Target Branch:** `feat/ui-chirag`  
+> **Target Test Suites:** `tests/toggle.test.ts`, `tests/metro.test.ts`
+
+---
+
+## 🤖 1-Click Prompt for Antigravity & Qoder
+> **Instructions for Chirag:** When you open Antigravity or Qoder, copy-paste this prompt into the chat window:
+
+```text
+I am Chirag working on feature branch feat/ui-chirag.
+1. Read team/Chirag/README.md, AGENTS.md, and GEMINI.md for my strict scope.
+2. My mission is building the Master UI shell, Zephium Top Omnibar, Left Dock Rail, Bottom Status Pills, and Onboarding Location Modal in app/ and src/components/.
+3. Invariants: ZERO CSS gradients. Halftone dot-matrix stippling into graphite #09090b ground.
+4. Data Contract: Consume layout and metro presets from src/lib/city/.
+5. Definition of Done: Your work is done ONLY when 'npm run verify' exits with 0 errors.
+```
 
 ---
 
