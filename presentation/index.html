@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibeLens Pitch Deck // Prasunex 2026</title>
+  <title>VibeLens // Workshop Inspection Bench // Pitch Deck</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #060608;
-      color: #f4f4f5;
-      user-select: none;
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+    
+    .font-serif {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+    .font-sans {
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
     }
     .font-mono {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', Consolas, monospace;
     }
     .slide-active {
       display: flex;
@@ -24,405 +25,464 @@
     }
   </style>
 </head>
-<body class="h-screen w-screen overflow-hidden flex flex-col justify-between">
-  <!-- Top Navigation & Omnibar (Zephium Aesthetic) -->
-  <header class="h-14 border-b border-white/10 px-6 flex items-center justify-between bg-[#09090b]/90 backdrop-blur-md z-50">
+<body id="deckBody" class="h-screen w-screen overflow-hidden flex flex-col justify-between bg-[#1C1F24] text-[#F4F1EA] select-none transition-colors duration-200">
+
+  <!-- Header Omnibar -->
+  <header id="deckHeader" class="h-14 border-b border-[#2D333B] px-8 flex items-center justify-between bg-[#1C1F24]/90 backdrop-blur-md z-50 transition-colors duration-200">
     <div class="flex items-center gap-3">
-      <div class="w-2.5 h-2.5 bg-[#10b981]"></div>
-      <span class="font-mono text-xs font-bold text-white tracking-wider">VIBELENS // PRASUNEX 2026 PITCH DECK</span>
-      <span class="font-mono text-[10px] px-2 py-0.5 bg-[#111115] border border-white/10 text-[#71717a]">[100% EDITABLE TEXT]</span>
+      <!-- Lens Circle Mark Icon -->
+      <div class="relative w-4 h-4 flex items-center justify-center">
+        <div class="w-4 h-4 rounded-full border-2 border-[#E8A33D]"></div>
+        <div class="absolute w-1.5 h-1.5 rounded-full bg-[#E8A33D]"></div>
+      </div>
+      <span class="font-serif text-sm font-bold tracking-wide">VibeLens</span>
+      <span class="font-mono text-[11px] text-[#5B7C99]">// Workshop Inspection Bench</span>
     </div>
 
-    <!-- Center Omnibar / Slide Counter -->
-    <div class="flex items-center gap-2 bg-[#111115] border border-white/10 px-3 py-1 rounded-full font-mono text-xs text-[#a1a1aa]">
-      <button onclick="prevSlide()" class="hover:text-white px-1">◀</button>
-      <span id="slideIndicator" class="text-white font-bold">SLIDE 01 / 12</span>
-      <button onclick="nextSlide()" class="hover:text-white px-1">▶</button>
+    <!-- Center Slide Omnibar Pill -->
+    <div id="slidePill" class="flex items-center gap-3 bg-[#22262C] border border-[#2D333B] px-4 py-1 rounded-full font-mono text-xs">
+      <button onclick="prevSlide()" class="hover:text-[#E8A33D] px-1 transition-colors">◀</button>
+      <span id="slideIndicator" class="font-bold text-[#F4F1EA]">01 / 12</span>
+      <button onclick="nextSlide()" class="hover:text-[#E8A33D] px-1 transition-colors">▶</button>
     </div>
 
     <!-- Right Controls -->
     <div class="flex items-center gap-3 font-mono text-xs">
-      <button onclick="toggleNotes()" class="px-2.5 py-1 bg-[#111115] hover:bg-white/10 border border-white/10 text-[#06b6d4]">
-        [Notes: <span id="notesState">Hidden</span>]
+      <button onclick="toggleNotes()" id="notesBtn" class="px-3 py-1 bg-[#22262C] hover:bg-white/10 border border-[#2D333B] text-[#5B7C99]">
+        [Notes: <span id="notesState">Off</span>]
       </button>
-      <a href="vibelens-pitch-deck.pptx" download class="px-3 py-1 bg-[#10b981] hover:bg-[#059669] text-black font-bold">
+      <a href="vibelens-pitch-deck.pptx" download class="px-3 py-1 bg-[#E8A33D] hover:bg-[#d69332] text-[#1C1F24] font-bold">
         ↓ Download .pptx
       </a>
     </div>
   </header>
 
   <!-- Main Slide Stage -->
-  <main id="slideStage" class="flex-1 w-full max-w-6xl mx-auto p-6 md:p-10 flex flex-col justify-center relative">
+  <main id="slideStage" class="flex-1 w-full max-w-6xl mx-auto p-6 md:p-12 flex flex-col justify-center relative">
     
-    <!-- SLIDE 1: Title -->
-    <div class="slide slide-active flex-col justify-between h-full py-4" data-slide="1" data-notes="Good morning, judges. We are Team VibeLens, presenting for the Prasunex Innovathon 2026. Today, AI assistants help developers generate thousands of lines of code in hours. But that speed creates a catastrophic downstream problem: phantom vulnerability alert overload. VibeLens solves this with one uncompromising premise: Only fix the vulnerabilities your code can actually reach.">
-      <div>
-        <div class="font-mono text-xs text-[#06b6d4] font-bold mb-3">[PRASUNEX INNOVATHON 2026 // IDEA SUBMISSION]</div>
-        <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-3">VIBELENS</h1>
-        <h2 class="text-xl md:text-2xl font-bold text-[#10b981] mb-4">"Only fix the vulnerabilities your code can actually reach."</h2>
-        <p class="text-base text-[#a1a1aa] max-w-3xl leading-relaxed">A local-first codebase hygiene, vulnerability reachability, and 3D architecture visualization system for the generative AI era.</p>
-      </div>
+    <!-- SLIDE 1: Title (Dark Graphite) -->
+    <div class="slide slide-active flex-col justify-between h-full py-4" data-slide="1" data-theme="dark" data-notes="Judges, welcome to VibeLens. Notice what you are looking at: not a neon gradient SaaS deck, but a workshop inspection bench. VibeLens is an optical instrument for code. In the AI era, code is generated in seconds, but dependency scanners drown developers in hundreds of false alarms. Our thesis is calm and absolute: Only fix the vulnerabilities your code can actually reach.">
+      <div class="font-mono text-xs text-[#5B7C99]">[ PRASUNEX INNOVATHON 2026 // CODEBASE INSPECTION BENCH ]</div>
 
-      <div class="p-6 bg-[#09090b] border border-white/10 my-4">
-        <div class="font-mono text-[11px] text-[#71717a] font-bold mb-4">TEAM CONTRIBUTORS & ARCHITECTURAL ROLES</div>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div><div class="font-bold text-white text-sm">Chirag Goenka</div><div class="font-mono text-[10px] text-[#06b6d4] mt-0.5">UI & Product Architecture</div></div>
-          <div><div class="font-bold text-white text-sm">Rajveer Singh</div><div class="font-mono text-[10px] text-[#06b6d4] mt-0.5">ReachableSec SAST Engine</div></div>
-          <div><div class="font-bold text-white text-sm">Vihaan Verma</div><div class="font-mono text-[10px] text-[#06b6d4] mt-0.5">3D Spatial Treemap & Wiring</div></div>
-          <div><div class="font-bold text-white text-sm">Aaryan Sharma</div><div class="font-mono text-[10px] text-[#06b6d4] mt-0.5">Blast Radius HUD & MCP</div></div>
-          <div><div class="font-bold text-white text-sm">Archit Agrawal</div><div class="font-mono text-[10px] text-[#06b6d4] mt-0.5">1Hz CLI Sentinel & Daemon</div></div>
-        </div>
-      </div>
-
-      <div class="font-mono text-xs text-[#71717a]">[INVARIANTS: 100% LOCAL PRIVACY // ZERO CLOUD CODE UPLOADS // 88.6% NOISE FILTERED]</div>
-    </div>
-
-    <!-- SLIDE 2: The Problem -->
-    <div class="slide slide-inactive flex-col justify-between h-full py-4" data-slide="2" data-notes="Look at any modern repository running npm audit or Snyk today. You see 30, 40, or 100 vulnerability alarms. But here is the dirty secret of AppSec: the vast majority of those functions are NEVER called. If a library has a prototype pollution flaw in function B, but your code only calls function A, you are not exploitable. Yet developers spend days triaging, or worse, ignore the scanner completely. With AI coding agents pulling in dependencies at breakneck speed, this problem is exploding.">
-      <div>
-        <div class="font-mono text-xs text-[#06b6d4] font-bold mb-2">[THE PROBLEM // DEPENDENCY REALITY]</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Dependency Scanners Are Drowning Developers in Phantom Noise</h2>
-        <p class="text-sm text-[#a1a1aa]">Traditional static tools inspect package manifests rather than executable runtime call-chains.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
-        <div class="p-6 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div>
-            <div class="font-mono text-[10px] text-[#f59e0b] font-bold mb-2">01 // NOISE TSUNAMI</div>
-            <h3 class="text-lg font-bold text-white mb-2">Hundreds of Phantom CVEs</h3>
-            <p class="text-xs text-[#a1a1aa] leading-relaxed">Standard scanners report hundreds of CVEs by simply matching package.json versions. Over 85% of flagged vulnerabilities sit in dead sub-dependencies or test fixtures that never run in production.</p>
-          </div>
-          <div class="mt-4"><div class="text-3xl font-extrabold text-[#f59e0b]">85%+</div><div class="font-mono text-[10px] text-[#71717a]">CVEs are never called</div></div>
-        </div>
-
-        <div class="p-6 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div>
-            <div class="font-mono text-[10px] text-[#ef4444] font-bold mb-2">02 // FATIGUE & PARALYSIS</div>
-            <h3 class="text-lg font-bold text-white mb-2">Ignored Alerts or Lost Days</h3>
-            <p class="text-xs text-[#a1a1aa] leading-relaxed">Teams face a toxic choice: spend dozens of hours manually investigating an obscure CVE, or ignore alerts entirely with blanket flags, allowing real zero-days to slip through.</p>
-          </div>
-          <div class="mt-4"><div class="text-3xl font-extrabold text-[#ef4444]">140min</div><div class="font-mono text-[10px] text-[#71717a]">Wasted per triage cycle</div></div>
-        </div>
-
-        <div class="p-6 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div>
-            <div class="font-mono text-[10px] text-[#f97316] font-bold mb-2">03 // AI VELOCITY TRAP</div>
-            <h3 class="text-lg font-bold text-white mb-2">AI Ships Transitive Slop</h3>
-            <p class="text-xs text-[#a1a1aa] leading-relaxed">Coding agents (Cursor, Claude) install packages rapidly to solve instant tasks. The velocity is exhilarating, but transitive dependency bloat accumulates 10x faster than review capacity.</p>
-          </div>
-          <div class="mt-4"><div class="text-3xl font-extrabold text-[#f97316]">10x</div><div class="font-mono text-[10px] text-[#71717a]">Dependency growth rate</div></div>
-        </div>
-      </div>
-
-      <div class="font-mono text-xs text-[#71717a]">[STATUS: PARALYSIS // AUDIT BURNOUT]</div>
-    </div>
-
-    <!-- SLIDE 3: The Insight -->
-    <div class="slide slide-inactive flex-col justify-between h-full py-4" data-slide="3" data-notes="The insight is simple compiler science: A vulnerability only exists if a path exists from an entry point—a Next.js route, an API endpoint, a CLI flag—to the vulnerable code. If lodash.merge has a CVE, but your entire application only ever calls lodash.pick, that CVE is dead weight. It cannot be exploited through your code. VibeLens deterministically traces that path.">
-      <div>
-        <div class="font-mono text-xs text-[#06b6d4] font-bold mb-2">[THE INSIGHT // COMPILER SCIENCE PRINCIPLE]</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">A Vulnerability Only Matters If A Path Exists To Reach It</h2>
-        <p class="text-sm text-[#a1a1aa]">Replacing blind manifest scanning with deterministic Abstract Syntax Tree (AST) reachability traversal.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-        <div class="p-6 bg-[#09090b] border border-white/10">
-          <div class="font-mono text-xs text-[#06b6d4] font-bold mb-2">THE REACHABILITY THEOREM</div>
-          <h3 class="text-lg font-bold text-white mb-3">Static Lists Are Meaningless Without Execution Flow</h3>
-          <p class="text-xs text-[#a1a1aa] leading-relaxed mb-3">In software security, an attack surface requires three elements:</p>
-          <ol class="text-xs text-[#f4f4f5] space-y-2 mb-4 font-mono">
-            <li>1. Untrusted input entry point (HTTP route, CLI arg).</li>
-            <li>2. Propagation path through local application code.</li>
-            <li>3. Execution sink into the vulnerable library function.</li>
-          </ol>
-          <p class="text-xs text-[#71717a]">If step 2 does not exist, the vulnerability is dormant phantom noise. VibeLens checks that exact path across the codebase AST call-graph.</p>
-        </div>
-
-        <div class="p-6 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div class="font-mono text-xs text-[#10b981] font-bold mb-3">CONVENTIONAL SCANNER VS. VIBELENS REACHABLESEC</div>
-          <div class="p-4 bg-[#18181b] border border-[#ef4444] mb-3">
-            <div class="font-mono text-[10px] text-[#ef4444] font-bold">CONVENTIONAL SCANNER (MANIFEST LEVEL)</div>
-            <div class="font-mono text-xs text-[#a1a1aa] mt-1">package.json contains 'lodash@4.17.15'<br>➔ 🚨 CRITICAL ALARM: CVE-2020-8203<br>➔ Result: 36 alarms regardless of code.</div>
-          </div>
-          <div class="p-4 bg-[#18181b] border border-[#10b981]">
-            <div class="font-mono text-[10px] text-[#10b981] font-bold">VIBELENS REACHABLESEC (AST CALL-GRAPH)</div>
-            <div class="font-mono text-xs text-[#f4f4f5] mt-1">Traverse: route.ts ➔ parseInput() ➔ lodash.pick()<br>➔ Sink check: lodash.merge() is NEVER invoked.<br>➔ 🛡️ PHANTOM ALARM SILENCED (88.6% drop).</div>
+      <div class="my-auto">
+        <div class="flex items-center gap-6 mb-4">
+          <h1 class="text-7xl md:text-8xl font-bold font-serif tracking-tight text-[#F4F1EA]">VibeLens</h1>
+          <!-- Lens Mark -->
+          <div class="relative w-16 h-16 rounded-full border-2 border-[#E8A33D] flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full border border-dashed border-[#5B7C99]"></div>
+            <div class="absolute w-2.5 h-2.5 rounded-full bg-[#E8A33D]"></div>
           </div>
         </div>
+
+        <h2 class="text-2xl md:text-3xl font-serif text-[#E8A33D] mb-4">"Only fix the vulnerabilities your code can actually reach."</h2>
+        <p class="text-base text-[#8B949E] max-w-3xl font-sans leading-relaxed">A deterministic reachability lens that traces call-paths from entry points to dependencies, separating verified zero-day exploit paths from dormant phantom noise.</p>
       </div>
 
-      <div class="font-mono text-xs text-[#71717a]">[THEORY: DETERMINISTIC GRAPH REACHABILITY]</div>
-    </div>
-
-    <!-- SLIDE 4: How It Works -->
-    <div class="slide slide-inactive flex-col justify-between h-full py-4" data-slide="4" data-notes="Here is the four-step pipeline. Step 1: Ingest standard scanner results from npm audit or SARIF. Step 2: Parse local TypeScript and JavaScript on-device with Babel and es-module-lexer. Step 3: Run Depth-First Search from every public route and entry point. Step 4: Output ranked, honest findings. Total execution time on a 200-file codebase: less than 15 milliseconds. And zero bytes of code ever leave the machine.">
-      <div>
-        <div class="font-mono text-xs text-[#06b6d4] font-bold mb-2">[SYSTEM PIPELINE // 4-STEP FLOW]</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">The 4-Step Deterministic Reachability Engine</h2>
-        <p class="text-sm text-[#a1a1aa]">How VibeLens ingests repository code and scanner outputs to produce verified exploit paths in &lt;15ms.</p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
-        <div class="p-5 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div><div class="font-mono text-[10px] text-[#06b6d4] font-bold">STEP 01</div><h3 class="font-bold text-white text-sm my-1">SCAN REPO & SARIF</h3><p class="text-xs text-[#a1a1aa]">Ingests standard scanner output (npm audit JSON or SARIF) to extract target vulnerable symbol fingerprints.</p></div>
-          <div class="font-mono text-[10px] text-[#06b6d4] mt-3">Standard Inputs</div>
-        </div>
-        <div class="p-5 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div><div class="font-mono text-[10px] text-[#3b82f6] font-bold">STEP 02</div><h3 class="font-bold text-white text-sm my-1">BUILD AST IMPORT GRAPH</h3><p class="text-xs text-[#a1a1aa]">Local Babel parser & es-module-lexer parses local code on-device, mapping exact imports, exports, and call-sites.</p></div>
-          <div class="font-mono text-[10px] text-[#3b82f6] mt-3">&lt;15ms Deterministic</div>
-        </div>
-        <div class="p-5 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div><div class="font-mono text-[10px] text-[#f97316] font-bold">STEP 03</div><h3 class="font-bold text-white text-sm my-1">TRACE ENTRY POINTS</h3><p class="text-xs text-[#a1a1aa]">Depth-First Search (DFS) traces paths originating from public entry points (routes, controllers, server actions).</p></div>
-          <div class="font-mono text-[10px] text-[#f97316] mt-3">DFS Call-Graph</div>
-        </div>
-        <div class="p-5 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-          <div><div class="font-mono text-[10px] text-[#10b981] font-bold">STEP 04</div><h3 class="font-bold text-white text-sm my-1">LABEL & PRIORITIZE</h3><p class="text-xs text-[#a1a1aa]">Classifies each CVE into Reachable (red), Unknown/Dynamic (yellow), or Silenced Phantom (green shield).</p></div>
-          <div class="font-mono text-[10px] text-[#10b981] mt-3">88.6% Filtered</div>
-        </div>
-      </div>
-
-      <div class="p-4 bg-[#111115] border border-[#06b6d4] font-mono text-xs">
-        <div class="text-[#06b6d4] font-bold mb-1">INPUT / OUTPUT CONTRACT // 100% OFFLINE EXECUTION</div>
-        <div class="text-[#f4f4f5]">INPUTS: Local Git tree + standard npm audit / SARIF reports.<br>OUTPUTS: Prioritized queue of truly reachable CVEs + 3D laser graph + zero-slop PR patches.</div>
+      <div class="font-mono text-xs text-[#5B7C99] border-t border-[#2D333B] pt-4 flex flex-col sm:flex-row justify-between gap-2">
+        <div>TEAM: Chirag Goenka • Rajveer Singh • Vihaan Verma • Aaryan Sharma • Archit Agrawal</div>
+        <div>100% LOCAL PRIVACY // ZERO CLOUD LEAKS</div>
       </div>
     </div>
 
-    <!-- Additional slides rendered identically via JS state -->
+    <!-- SLIDE 2: The Problem (Warm Paper) -->
+    <div class="slide slide-inactive flex-col justify-between h-full py-4" data-slide="2" data-theme="light" data-notes="Notice slide 2: Warm paper. One dominant number: 36. This is the alert count from running npm audit on our own testbed. On the right, look at the column of CVE IDs fading out like fog. 34 of those CVEs are completely dormant. When security tools cry wolf 34 times, developers either waste days triaging or ignore the scanner completely. With AI generating code at 10x speed, the fog only thickens.">
+      <div class="font-mono text-xs text-[#5B7C99]">[ THE PROBLEM // THE ALERT FOG ]</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 my-auto items-center">
+        <!-- Huge Dominant Number (Left 7 Cols) -->
+        <div class="md:col-span-8">
+          <div class="text-[130px] md:text-[160px] font-bold font-serif leading-none text-[#1C1F24]">36</div>
+          <h2 class="text-2xl font-serif font-bold text-[#1C1F24] mt-2 mb-4">vulnerability alarms reported by npm audit.</h2>
+          <p class="text-base text-[#57606A] font-sans leading-relaxed max-w-xl">
+            <strong class="text-[#1C1F24]">34 of them are completely dormant.</strong> The vulnerable functions are never called by your application, never reached by an HTTP route, and never executed in production.<br><br>
+            Yet conventional scanners treat every alert with equal emergency, creating paralysis and alert fatigue.
+          </p>
+        </div>
+
+        <!-- CVE Fog Column (Right 4 Cols) -->
+        <div class="md:col-span-4 p-4 bg-[#ECE8E0] border border-[#D0CBC1] font-mono text-xs space-y-1.5 select-none">
+          <div class="text-[10px] text-[#5B7C99] font-bold mb-2">// AUDIT REPORT SINK LOG</div>
+          <div class="text-[#E8A33D] font-bold">CVE-2020-8203 · reachable</div>
+          <div class="text-[#E8A33D] font-bold">CVE-2021-3749 · reachable</div>
+          <div class="text-[#8C959F]">CVE-2022-25883 · uncalled</div>
+          <div class="text-[#8C959F]">CVE-2023-26159 · uncalled</div>
+          <div class="text-[#8C959F]">CVE-2023-45133 · uncalled</div>
+          <div class="text-[#A8A29E]">CVE-2024-21538 · uncalled</div>
+          <div class="text-[#A8A29E]">CVE-2021-23337 · uncalled</div>
+          <div class="text-[#D6D3D1]">CVE-2022-0235 · uncalled</div>
+          <div class="text-[#E7E5E4]">CVE-2023-30533 · uncalled</div>
+          <div class="text-[#F5F5F4] text-[9px]">... [25 MORE SILENCED]</div>
+        </div>
+      </div>
+
+      <div class="font-mono text-xs text-[#8C959F] border-t border-[#D0CBC1] pt-3">
+        VIBELENS // INSPECTION BENCH // ALERT FOG FILTER
+      </div>
+    </div>
+
+    <!-- SLIDE 3: The Insight (Split Layout: Dark Graphite) -->
+    <div class="slide slide-inactive flex-col justify-between h-full py-4" data-slide="3" data-theme="dark" data-notes="Slide 3 shows the core insight. On the left: A vulnerability matters only if a path exists from an entry point to the vulnerable code. On the right: Three outlined boxes in a straight line. Look at the amber line connecting them. The route calls the processor, which calls lodash.merge. That is an active, verified exploit path. But at the bottom in grey: jsonwebtoken. It's imported in package.json, but no path reaches it. It stays dark.">
+      <div class="font-mono text-xs text-[#5B7C99]">[ THE INSIGHT // THE COMPILER PRINCIPLE ]</div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 my-auto items-center">
+        <!-- Left Statement (6 Cols) -->
+        <div class="md:col-span-6">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#F4F1EA] leading-tight mb-6">
+            A vulnerability matters only if a path exists from an entry point to the vulnerable code.
+          </h2>
+          <p class="text-sm text-[#8B949E] font-sans leading-relaxed mb-4">
+            Manifest-level scanners assume that importing a package exposes its entire attack surface. Compiler science proves otherwise: execution is a directed graph.
+          </p>
+          <p class="text-sm text-[#8B949E] font-sans leading-relaxed">
+            VibeLens traverses the AST to verify whether an actual execution path reaches the vulnerable function.
+          </p>
+        </div>
+
+        <!-- Right Outlined Diagram (6 Cols) -->
+        <div class="md:col-span-6 p-6 bg-[#22262C] border border-[#2D333B]">
+          <div class="font-mono text-[10px] text-[#5B7C99] mb-4">[ DIRECTED AST EXECUTION GRAPH ]</div>
+
+          <!-- Node 1: Entry Point -->
+          <div class="p-3 bg-[#1C1F24] border border-[#E8A33D] font-mono text-xs">
+            <div class="text-[#F4F1EA] font-bold">ENTRY // app/api/checkout/route.ts</div>
+            <div class="text-[10px] text-[#8B949E]">Public HTTP Route Handler (Untrusted input arrives)</div>
+          </div>
+
+          <!-- Amber connecting path -->
+          <div class="h-6 w-0.5 bg-[#E8A33D] ml-8 my-1"></div>
+
+          <!-- Node 2: Caller -->
+          <div class="p-3 bg-[#1C1F24] border border-[#E8A33D] font-mono text-xs">
+            <div class="text-[#F4F1EA] font-bold">CALLER // src/lib/order/processor.ts</div>
+            <div class="text-[10px] text-[#8B949E]">processOrder() invokes internal helper</div>
+          </div>
+
+          <!-- Amber connecting path -->
+          <div class="h-6 w-0.5 bg-[#E8A33D] ml-8 my-1"></div>
+
+          <!-- Node 3: Vulnerable Sink -->
+          <div class="p-3 bg-[#1C1F24] border-2 border-[#E8A33D] font-mono text-xs">
+            <div class="text-[#E8A33D] font-bold">SINK // lodash.merge [CVE-2020-8203]</div>
+            <div class="text-[10px] text-[#F4F1EA]">Reachable exploit path verified • 12ms</div>
+          </div>
+
+          <!-- Detached Dormant Node -->
+          <div class="mt-4 p-2 bg-[#1C1F24] border border-dashed border-[#5B7C99] font-mono text-[11px] text-[#5B7C99]">
+            DORMANT // jsonwebtoken [CVE-2022-23529] · NO STATIC PATH FOUND
+          </div>
+        </div>
+      </div>
+
+      <div class="font-mono text-xs text-[#5B7C99] border-t border-[#2D333B] pt-3">
+        VIBELENS // DIRECTED GRAPH AST TRAVERSAL
+      </div>
+    </div>
+
+    <!-- Additional Slides Container -->
     <div id="dynamicSlideContainer"></div>
   </main>
 
-  <!-- Keyboard Hint & Footer Telemetry -->
-  <footer class="h-10 border-t border-white/10 px-6 flex items-center justify-between font-mono text-[11px] text-[#71717a] bg-[#09090b]">
+  <!-- Footer Status Bar -->
+  <footer id="deckFooter" class="h-10 border-t border-[#2D333B] px-8 flex items-center justify-between font-mono text-[11px] text-[#57606A] bg-[#1C1F24] transition-colors duration-200">
     <div>USE ARROW KEYS [◀ / ▶] OR [SPACE] TO NAVIGATE SLIDES</div>
     <div id="footerStatus">[STATUS: ACTIVE // 12ms // 100% LOCAL PRIVACY]</div>
   </footer>
 
-  <!-- Speaker Notes Drawer -->
-  <div id="notesDrawer" class="hidden fixed bottom-10 left-0 right-0 max-h-48 bg-[#111115] border-t border-white/20 p-6 z-40 overflow-y-auto">
-    <div class="font-mono text-[10px] text-[#06b6d4] font-bold mb-1">[SPEAKER NOTES // PROMPTER HUD]</div>
-    <div id="notesContent" class="text-sm text-[#cbd5e1] leading-relaxed font-sans"></div>
+  <!-- Speaker Notes Prompter Drawer -->
+  <div id="notesDrawer" class="hidden fixed bottom-10 left-0 right-0 max-h-48 bg-[#141619] border-t border-[#E8A33D]/40 p-6 z-40 overflow-y-auto">
+    <div class="font-mono text-[10px] text-[#E8A33D] font-bold mb-1">[SPEAKER NOTES // PROMPTER HUD]</div>
+    <div id="notesContent" class="text-sm text-[#F4F1EA] leading-relaxed font-sans"></div>
   </div>
 
   <script>
     let currentSlide = 1;
     const totalSlides = 12;
 
-    const SLIDES_DATA = [
+    const SLIDES = [
       {
-        num: 5,
-        category: "LIVE VERIFICATION // REAL-WORLD CASE STUDY",
-        title: "Real Vulnerability Traced: Prototype Pollution in 12ms",
-        subtitle: "How VibeLens proves an actual exploit path and distinguishes it from dormant packages.",
-        notes: "This is what judges remember: a concrete trace. Look at the left column: VibeLens maps the attack surface from route.ts through processOrder down to lodash.merge. It identifies CVE-2020-8203 as genuinely reachable. On the right, it computes the blast radius: 3 callers depend on this function. Instead of breaking production, VibeLens provides a surgical 1-click replacement with native structuredClone.",
+        num: 4,
+        theme: "light",
+        category: "HOW IT WORKS // THE TRANSFORMATION",
+        title: "From Raw Repository to Labeled Findings in Three Stages",
+        notes: "Notice how slide 4 avoids four generic icon boxes. Instead, it shows the exact transformation in three stages connected by a single line. Stage 1: The raw file tree on disk. Stage 2: Babel parses it into an AST import graph. Stage 3: The labeled result—where the single reachable path is highlighted in amber, and the 34 phantom alerts are silenced.",
         html: `
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="p-6 bg-[#09090b] border border-[#ef4444]">
-              <div class="font-mono text-xs text-[#ef4444] font-bold mb-3">VERIFIED EXPLOIT PATH [CVE-2020-8203]</div>
-              <div class="space-y-3 font-mono text-xs">
-                <div><div class="text-[#06b6d4] font-bold">[ENTRY] app/api/checkout/route.ts:L14</div><div class="text-[#71717a] text-[11px]">Accepts untrusted JSON payload</div></div>
-                <div class="text-[#ef4444]">↓ calls</div>
-                <div><div class="text-white font-bold">[CALLER] src/lib/order/processor.ts:L38</div><div class="text-[#71717a] text-[11px]">processOrder() forwards payload to helper</div></div>
-                <div class="text-[#ef4444]">↓ calls</div>
-                <div><div class="text-white font-bold">[HELPER] src/utils/sanitize-merge.ts:L12</div><div class="text-[#71717a] text-[11px]">Invokes lodash.merge() on user input</div></div>
-                <div class="text-[#ef4444]">↓ calls</div>
-                <div><div class="text-[#ef4444] font-bold">[SINK] node_modules/lodash/merge.js</div><div class="text-[#ef4444] text-[11px]">🚨 CVE-2020-8203: Prototype Pollution Exploitable</div></div>
-              </div>
-            </div>
-            <div class="p-6 bg-[#09090b] border border-white/10 flex flex-col justify-between">
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ HOW IT WORKS // THE TRANSFORMATION ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#1C1F24] mb-8">From Raw Repository to Labeled Findings in Three Stages</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto relative">
+            <div class="p-6 bg-[#F4F1EA] border border-[#D0CBC1] flex flex-col justify-between">
               <div>
-                <div class="font-mono text-xs text-[#f97316] font-bold mb-2">BLAST RADIUS & SAFE REMEDIATION</div>
-                <h3 class="text-lg font-bold text-white mb-2">Downstream Impact Analysis</h3>
-                <p class="text-xs text-[#a1a1aa] mb-4">Fixing dependencies breaks callers. VibeLens computes blast radius first:</p>
-                <div class="grid grid-cols-2 gap-3 font-mono text-xs mb-4">
-                  <div class="p-3 bg-[#18181b] border border-white/10"><div class="text-[10px] text-[#71717a]">DIRECT CALLERS</div><div class="text-base font-bold text-[#f97316]">3 Files</div></div>
-                  <div class="p-3 bg-[#18181b] border border-white/10"><div class="text-[10px] text-[#71717a]">TRANSITIVE NODES</div><div class="text-base font-bold text-white">7 Files</div></div>
-                  <div class="p-3 bg-[#18181b] border border-white/10"><div class="text-[10px] text-[#71717a]">BREAKING RISK</div><div class="text-base font-bold text-[#f59e0b]">MODERATE</div></div>
-                  <div class="p-3 bg-[#18181b] border border-white/10"><div class="text-[10px] text-[#71717a]">TEST SUITE</div><div class="text-base font-bold text-[#10b981]">18/18 PASS</div></div>
+                <div class="font-mono text-xs text-[#5B7C99] font-bold mb-1">STAGE 01</div>
+                <h3 class="font-serif font-bold text-lg text-[#1C1F24] mb-1">THE FILE TREE</h3>
+                <div class="text-xs text-[#57606A] mb-4">Raw Code On Disk</div>
+                <div class="p-3 bg-[#ECE8E0] border border-[#D0CBC1] font-mono text-[11px] text-[#57606A] leading-relaxed">
+                  app/<br>&nbsp;└── api/checkout/route.ts<br>src/<br>&nbsp;├── lib/order.ts<br>&nbsp;└── utils/merge.ts<br>node_modules/<br>&nbsp;└── lodash/merge.js
                 </div>
               </div>
-              <div class="p-3 bg-[#111115] border border-[#10b981] font-mono text-xs">
-                <div class="text-[#10b981] font-bold">1-CLICK FIX: Replace lodash.merge with structuredClone()</div>
-                <div class="text-[#a1a1aa] text-[11px]">Removes vulnerable package entirely with 0 breaking API changes.</div>
+            </div>
+            <div class="p-6 bg-[#F4F1EA] border border-[#D0CBC1] flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-xs text-[#5B7C99] font-bold mb-1">STAGE 02</div>
+                <h3 class="font-serif font-bold text-lg text-[#1C1F24] mb-1">THE 2D IMPORT GRAPH</h3>
+                <div class="text-xs text-[#57606A] mb-4">AST Graph Traversal</div>
+                <div class="p-3 bg-[#ECE8E0] border border-[#D0CBC1] font-mono text-[11px] text-[#57606A] leading-relaxed">
+                  [route.ts]<br>&nbsp;&nbsp;&nbsp;&nbsp;↓ imports<br>[order.ts]<br>&nbsp;&nbsp;&nbsp;&nbsp;↓ imports<br>[merge.ts]<br>&nbsp;&nbsp;&nbsp;&nbsp;↓ imports<br>[lodash.merge]
+                </div>
+              </div>
+            </div>
+            <div class="p-6 bg-[#F4F1EA] border-2 border-[#E8A33D] flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-xs text-[#E8A33D] font-bold mb-1">STAGE 03</div>
+                <h3 class="font-serif font-bold text-lg text-[#1C1F24] mb-1">THE LABELED RESULT</h3>
+                <div class="text-xs text-[#57606A] mb-4">Reachability Verdict</div>
+                <div class="p-3 bg-[#ECE8E0] border border-[#D0CBC1] font-mono text-[11px] leading-relaxed">
+                  <span class="text-[#E8A33D] font-bold">● REACHABLE:</span><br>&nbsp;&nbsp;lodash.merge (CVE-2020-8203)<br><br><span class="text-[#57606A]">○ SILENCED (34):</span><br>&nbsp;&nbsp;jsonwebtoken, semver...
+                </div>
               </div>
             </div>
           </div>
+          <div class="font-mono text-xs text-[#8C959F] border-t border-[#D0CBC1] pt-3 mt-6">STAGE CONNECTOR // CONTINUOUS PIPELINE</div>
+        `
+      },
+      {
+        num: 5,
+        theme: "dark",
+        category: "LIVE EXAMPLE // REAL CLI EXECUTION",
+        title: "Verified Terminal Output: Exploit Path Traced in 12ms",
+        notes: "Slide 5 is full-bleed dark terminal. No fabricated marketing numbers. This is the exact CLI output of VibeLens running against our test repository. Notice the amber highlighted trace: it starts at the Next.js checkout route, travels through processOrder, and hits lodash.merge. It flags that as reachable, while silencing the 34 phantom alarms. That clarity in 12 milliseconds is what engineers care about.",
+        html: `
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ LIVE EXAMPLE // REAL CLI EXECUTION ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#F4F1EA] mb-6">Verified Terminal Output: Exploit Path Traced in 12ms</h2>
+          <div class="p-6 bg-[#141619] border border-[#2D333B] font-mono text-xs leading-relaxed my-auto">
+            <div class="text-[#8B949E] border-b border-[#2D333B] pb-2 mb-4">● ● ● terminal // vibelens scan --reachability</div>
+            <div class="text-[#F4F1EA] font-bold mb-1">$ npx vibelens scan --entrypoints=app/api/**/route.ts</div>
+            <div class="text-[#8B949E] mb-1">[VibeLens] Ingesting 36 CVE findings from npm-audit.json...</div>
+            <div class="text-[#8B949E] mb-4">[VibeLens] Constructing local AST call-graph across 72 files in 11.8ms...</div>
+            <div class="text-[#E8A33D] font-bold mb-1">──▶ TRACED EXECUTION PATH [EXPLOIT CONFIRMED]:</div>
+            <div class="text-[#F4F1EA]">&nbsp;&nbsp;&nbsp;├── [ENTRY] app/api/checkout/route.ts:L14 (HTTP POST /api/checkout)</div>
+            <div class="text-[#8B949E]">&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── calls processOrder() in src/lib/order/processor.ts:L38</div>
+            <div class="text-[#8B949E]">&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── calls sanitizeMerge() in src/utils/sanitize-merge.ts:L12</div>
+            <div class="text-[#E8A33D] font-bold">&nbsp;&nbsp;&nbsp;└── [SINK]&nbsp;&nbsp;node_modules/lodash/merge.js</div>
+            <div class="text-[#E8A33D] mb-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── 🚨 CVE-2020-8203: Prototype Pollution via Object.prototype</div>
+            <div class="text-[#F4F1EA] font-bold">[VibeLens] SUMMARY VERDICT:</div>
+            <div class="text-[#E8A33D]">&nbsp;&nbsp;• Verified Reachable: 2 CVEs (lodash, qs)</div>
+            <div class="text-[#5B7C99]">&nbsp;&nbsp;• Silenced Phantoms:&nbsp;&nbsp;34 CVEs (jsonwebtoken, semver, minimist...)</div>
+            <div class="text-[#8B949E]">&nbsp;&nbsp;• Time Elapsed:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12.4ms (100% on-device, 0 bytes uploaded)</div>
+          </div>
+          <div class="font-mono text-xs text-[#5B7C99] border-t border-[#2D333B] pt-3 mt-4">VIBELENS // CLI BENCH HARNESS</div>
         `
       },
       {
         num: 6,
-        category: "SPATIAL TELEMETRY // 3D COCKPIT",
-        title: "The 3D Codebase X-Ray: Spatial Architecture at 120 FPS",
-        subtitle: "Replacing dead tabular spreadsheets with a living, interactive WebGL software city.",
-        notes: "Here is the 3D X-Ray. Instead of scrolling through an Excel spreadsheet of CVEs, the developer sees their codebase as a living city. Files are buildings, imports are bridges. By default, there are zero lasers—clean, pitch-black silence. But the moment you click a vulnerability, a red laser arc ignites, cutting across the city to trace the exact route that reaches it. It gives developers instant architectural intuition.",
+        theme: "dark",
+        category: "SPATIAL COCKPIT // CIRCULAR LENS APERTURE",
+        title: "The 3D X-Ray: Spatial Architecture Under the Lens",
+        notes: "Slide 6 uses the circular lens crop as requested. In the center, the 3D graph is viewed through the optical aperture. Look at the two thin leader lines: On the left, the amber laser arc tracing the exploit path. On the right, the steel blue dormant nodes staying quiet in the dark. The caption at the bottom anchors the entire interaction: 'Click a finding to light up its path through the codebase.'",
         html: `
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 my-6">
-            <div class="md:col-span-7 p-6 bg-[#060608] border border-white/10 relative">
-              <div class="flex justify-between font-mono text-[10px] text-[#71717a] mb-4">
-                <span>[+000, +000] // SECTOR-00 // 3D WEBGL GRAPH</span>
-                <span class="text-[#06b6d4]">[GRID: BLR // 12.9716° N]</span>
-              </div>
-              <div class="grid grid-cols-2 gap-3 font-mono text-xs">
-                <div class="p-3 bg-[#111115] border border-[#06b6d4]"><div class="text-[9px] text-[#06b6d4]">ENTRY ROUTE</div><div class="text-white font-bold">app/api/checkout</div><div class="text-[9px] text-[#71717a]">LOC: 142 • REACHABLE</div></div>
-                <div class="p-3 bg-[#111115] border border-[#f97316]"><div class="text-[9px] text-[#f97316]">CALLER HELPER</div><div class="text-white font-bold">src/lib/order</div><div class="text-[9px] text-[#71717a]">LOC: 88 • 3 DIRECT</div></div>
-                <div class="p-3 bg-[#0f1914] border border-[#10b981]"><div class="text-[9px] text-[#10b981]">PHANTOM SHIELD</div><div class="text-white font-bold">jsonwebtoken</div><div class="text-[9px] text-[#71717a]">🛡️ 88.6% SILENCED</div></div>
-                <div class="p-3 bg-[#1f1215] border border-[#ef4444]"><div class="text-[9px] text-[#ef4444]">TARGET SINK</div><div class="text-white font-bold">lodash.merge</div><div class="text-[9px] text-[#ef4444]">🚨 EXPLOIT PATH</div></div>
-              </div>
-              <div class="mt-4 p-2 bg-[#18181b] border border-[#ef4444] text-center font-mono text-xs text-[#ef4444] font-bold">
-                ➔ ➔ ON-DEMAND RED LASER ARC ACTIVE ➔ ➔
-              </div>
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ SPATIAL COCKPIT // CIRCULAR LENS APERTURE ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#F4F1EA] mb-4">The 3D X-Ray: Spatial Architecture Under the Lens</h2>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center my-auto">
+            <!-- Left Leader Line -->
+            <div class="md:col-span-3 font-mono text-xs text-[#E8A33D] space-y-1">
+              <div class="font-bold">REACHABLE EXPLOIT PATH</div>
+              <div class="text-[11px] text-[#8B949E]">Amber laser arc traces entry route directly to vulnerable sink.</div>
+              <div class="text-[#E8A33D]">────────────▶</div>
             </div>
-            <div class="md:col-span-5 p-6 bg-[#09090b] border border-white/10 flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-xs text-[#06b6d4] font-bold mb-2">TACTILE SPATIAL CONTROLS</div>
-                <h3 class="text-base font-bold text-white mb-3">"Click a finding to light up its path through the codebase."</h3>
-                <div class="space-y-3 text-xs text-[#a1a1aa]">
-                  <div><strong class="text-[#10b981]">● City View Treemap:</strong> Building heights derived from LOC clamped via sqrt scaling.</div>
-                  <div><strong class="text-[#10b981]">● On-Demand Laser Arcs:</strong> 0 laser arcs by default; lights up only on infected node.</div>
-                  <div><strong class="text-[#10b981]">● Metro Calibration:</strong> Personalizes district grid to developer's city (BLR, SFO, NYC).</div>
-                  <div><strong class="text-[#10b981]">● Orbital Wiring Graph:</strong> 3D force-directed dependency graph sharing selection state.</div>
+            <!-- Center Circular Lens Mask -->
+            <div class="md:col-span-6 flex justify-center">
+              <div class="relative w-72 h-72 rounded-full border-2 border-[#E8A33D] bg-[#141619] flex items-center justify-center overflow-hidden p-6">
+                <div class="absolute inset-4 rounded-full border border-dashed border-[#2D333B]"></div>
+                <div class="font-mono text-[10px] space-y-3 z-10 text-center">
+                  <div class="p-1 bg-[#1C1F24] border border-[#F4F1EA] text-[#F4F1EA] font-bold">route.ts [ENTRY]</div>
+                  <div class="text-[#E8A33D]">↓ amber arc</div>
+                  <div class="p-1 bg-[#1C1F24] border border-[#E8A33D] text-[#E8A33D] font-bold">lodash.merge [SINK]</div>
+                  <div class="text-[#5B7C99]">○ jsonwebtoken [SILENCED]</div>
                 </div>
               </div>
             </div>
+            <!-- Right Leader Line -->
+            <div class="md:col-span-3 font-mono text-xs text-[#5B7C99] space-y-1 text-right">
+              <div class="font-bold">SILENCED PHANTOM NODES</div>
+              <div class="text-[11px] text-[#8B949E]">34 dormant dependencies stay dark; zero visual noise.</div>
+              <div class="text-[#5B7C99]">◀────────────</div>
+            </div>
           </div>
+          <div class="text-center font-serif italic text-sm text-[#8B949E] mt-4">"Click a finding to light up its path through the codebase."</div>
         `
       },
       {
         num: 7,
-        category: "TECHNICAL CREDIBILITY // INVARIANT #1",
-        title: "Honest Reachability: Why VibeLens Never Says \"Safe\"",
-        subtitle: "Rigorous compiler honesty signals deep technical credibility to security engineers.",
-        notes: "Judges with security backgrounds respect this slide most. We never claim a codebase is '100% safe.' That is mathematically impossible in dynamic languages with eval and runtime reflection. Instead, we provide honest labels: Reachable, Unknown, and No Static Path Found. If code is dynamic, we classify it honestly as Unknown. This scientific rigor separates VibeLens from generic marketing hype.",
+        theme: "light",
+        category: "HONEST LABELS // SCIENTIFIC RIGOR",
+        title: "Three Honest Classifications. Zero Guesses.",
+        notes: "Slide 7 is typographic and quiet. Notice the three badges at real UI size: Reachable in amber, Possibly Reachable in steel blue, and No Static Path Found in grey. Below them is the line that wins technical credibility with security judges: VibeLens never says 'safe', with the word struck through. In dynamic JavaScript with eval and reflection, absolute safety is unprovable. Being honest about that builds trust.",
         html: `
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
-            <div class="p-6 bg-[#09090b] border border-[#ef4444] flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-xs text-[#ef4444] font-bold mb-1">TIER 01 // REACHABLE</div>
-                <div class="font-mono text-[10px] text-[#71717a] mb-3">VERIFIED ZERO-DAY EXPLOIT</div>
-                <p class="text-xs text-[#a1a1aa] leading-relaxed">A deterministic static execution path exists from a public route or main entry point directly to the vulnerable function sink.</p>
-              </div>
-              <div class="font-mono text-[11px] text-white mt-4 font-bold">ACTION: Fix immediately via 1-click test-gated PR.</div>
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ HONEST LABELS // SCIENTIFIC RIGOR ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#1C1F24] mb-8">Three Honest Classifications. Zero Guesses.</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto">
+            <div class="p-6 bg-[#F4F1EA] border border-[#E8A33D]">
+              <div class="inline-block px-3 py-1 rounded-full border border-[#E8A33D] font-mono text-xs font-bold text-[#E8A33D] mb-4">● REACHABLE</div>
+              <p class="text-xs text-[#57606A] leading-relaxed">A verified static call-path exists from an entry point to the vulnerable symbol. Fix immediately.</p>
             </div>
-            <div class="p-6 bg-[#09090b] border border-[#f59e0b] flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-xs text-[#f59e0b] font-bold mb-1">TIER 02 // UNKNOWN</div>
-                <div class="font-mono text-[10px] text-[#71717a] mb-3">DYNAMIC CODE DETECTED</div>
-                <p class="text-xs text-[#a1a1aa] leading-relaxed">Dynamic require(variable), eval(), or runtime reflection detected. Static analysis cannot guarantee safety.</p>
-              </div>
-              <div class="font-mono text-[11px] text-white mt-4 font-bold">ACTION: Flagged for manual review. Never assumed safe.</div>
+            <div class="p-6 bg-[#F4F1EA] border border-[#5B7C99]">
+              <div class="inline-block px-3 py-1 rounded-full border border-[#5B7C99] font-mono text-xs font-bold text-[#5B7C99] mb-4">● POSSIBLY REACHABLE</div>
+              <p class="text-xs text-[#57606A] leading-relaxed">Dynamic require(variable), eval(), or runtime reflection detected. Flagged honestly for manual review.</p>
             </div>
-            <div class="p-6 bg-[#09090b] border border-[#10b981] flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-xs text-[#10b981] font-bold mb-1">TIER 03 // NOT FOUND</div>
-                <div class="font-mono text-[10px] text-[#71717a] mb-3">NO STATIC PATH FOUND</div>
-                <p class="text-xs text-[#a1a1aa] leading-relaxed">No static execution path leads from any public entry point. Filtered from triage backlog to preserve focus.</p>
-              </div>
-              <div class="font-mono text-[11px] text-white mt-4 font-bold">ACTION: Phantom shield enabled; silenced from noise.</div>
+            <div class="p-6 bg-[#F4F1EA] border border-[#D0CBC1]">
+              <div class="inline-block px-3 py-1 rounded-full border border-[#8C959F] font-mono text-xs font-bold text-[#8C959F] mb-4">● NO STATIC PATH FOUND</div>
+              <p class="text-xs text-[#57606A] leading-relaxed">No static execution path leads from any public entry point. Silenced from triage queue.</p>
             </div>
           </div>
-          <div class="p-4 bg-[#111115] border border-white/10 font-mono text-xs">
-            <div class="text-[#06b6d4] font-bold mb-1">THE SCIENTIFIC HONESTY PACT</div>
-            <div class="text-[#f4f4f5]">Any security tool that claims 100% safety on dynamic JavaScript is misleading you. VibeLens maintains strict compiler credibility: deterministic static paths are proven; dynamic code is honestly classified as 'Unknown'.</div>
+          <div class="p-6 bg-[#ECE8E0] border border-[#D0CBC1] mt-8">
+            <div class="font-serif text-xl font-bold text-[#1C1F24] mb-2">
+              VibeLens never says <span class="line-through text-[#E8A33D]">"safe"</span>.
+            </div>
+            <p class="text-xs text-[#57606A] leading-relaxed">Security tools that promise '100% safe' on dynamic JavaScript are mathematically misleading. VibeLens maintains strict compiler credibility: deterministic paths are proven; dynamic code is honestly classified as unknown.</p>
           </div>
         `
       },
       {
         num: 8,
-        category: "EMPIRICAL RESULTS // BENCHMARK VERIFICATION",
+        theme: "light",
+        category: "EMPIRICAL BENCHMARK // REAL REPO RUN",
         title: "Benchmark: 88.6% - 94.4% Alert Noise Silenced",
-        subtitle: "Tested on real-world open-source repositories and deliberately vulnerable testbeds.",
-        notes: "Here are the real benchmark numbers: On our test repository, npm audit flagged 36 CVEs. VibeLens traversed the call-graph and proved that 34 of them were completely uncalled phantom code. Only 2 were reachable. Instead of wasting 140 minutes inspecting 36 false alarms, the developer fixes the 2 real risks in under two minutes.",
+        notes: "Slide 8 presents verified data with zero 3D clutter. The headline number dominates: -94.4% noise reduction. On the right, two simple flat bars: 36 alerts from npm audit on the left, reduced to 2 verified reachable vulnerabilities on the right. 34 false alarms silenced, saving hours of developer triage.",
         html: `
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-4 font-mono">
-            <div class="p-4 bg-[#09090b] border border-white/10"><div class="text-3xl font-extrabold text-[#10b981]">88.6%</div><div class="text-xs font-bold text-white mt-1">NOISE REDUCTION</div><div class="text-[10px] text-[#71717a]">31 of 35 silenced</div></div>
-            <div class="p-4 bg-[#09090b] border border-white/10"><div class="text-3xl font-extrabold text-[#06b6d4]">0</div><div class="text-xs font-bold text-white mt-1">FALSE NEGATIVES</div><div class="text-[10px] text-[#71717a]">On static paths</div></div>
-            <div class="p-4 bg-[#09090b] border border-white/10"><div class="text-3xl font-extrabold text-white">12ms</div><div class="text-xs font-bold text-white mt-1">ANALYSIS SPEED</div><div class="text-[10px] text-[#71717a]">AST traversal</div></div>
-            <div class="p-4 bg-[#09090b] border border-white/10"><div class="text-3xl font-extrabold text-[#10b981]">100%</div><div class="text-xs font-bold text-white mt-1">LOCAL PRIVACY</div><div class="text-[10px] text-[#71717a]">Zero cloud leaks</div></div>
-          </div>
-          <div class="p-4 bg-[#09090b] border border-white/10 overflow-x-auto">
-            <table class="w-full font-mono text-xs text-left">
-              <thead><tr class="text-[#71717a] border-b border-white/10"><th class="pb-2">DIMENSION</th><th class="pb-2">STANDARD NPM AUDIT</th><th class="pb-2">VIBELENS REACHABLESEC</th><th class="pb-2">IMPACT</th></tr></thead>
-              <tbody class="divide-y divide-white/5">
-                <tr><td class="py-2 text-white">Reported CVE Count</td><td class="text-[#ef4444]">36 Security Alerts</td><td class="text-[#10b981] font-bold">2 Reachable Exploits</td><td class="text-[#06b6d4]">94.4% Triage Drop</td></tr>
-                <tr><td class="py-2 text-white">Triage Investigation Time</td><td class="text-[#ef4444]">~140 Minutes Manual</td><td class="text-[#10b981] font-bold">&lt; 2 Minutes Automated</td><td class="text-[#06b6d4]">70x Faster</td></tr>
-                <tr><td class="py-2 text-white">Developer Behavior</td><td class="text-[#ef4444]">Ignored / Blanket flag</td><td class="text-[#10b981] font-bold">1-Click PR Remediation</td><td class="text-[#06b6d4]">True Hygiene</td></tr>
-                <tr><td class="py-2 text-white">Local Verification Gate</td><td class="text-[#ef4444]">None (Blind merge)</td><td class="text-[#10b981] font-bold">18/18 Tests Green</td><td class="text-[#06b6d4]">0 Broken Code</td></tr>
-              </tbody>
-            </table>
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ EMPIRICAL BENCHMARK // REAL REPO RUN ]</div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center my-auto">
+            <div class="md:col-span-7">
+              <div class="text-[110px] md:text-[140px] font-serif font-bold text-[#E8A33D] leading-none mb-2">-94.4%</div>
+              <h3 class="text-2xl font-serif font-bold text-[#1C1F24] mb-4">Triage Noise Reduction on Live Repository</h3>
+              <p class="text-sm text-[#57606A] leading-relaxed">
+                Tested on open-source Next.js testbed with 72 AST files and 36 raw npm audit alarms.<br><br>
+                • <strong>34 phantom alerts</strong> eliminated from developer attention.<br>
+                • <strong>2 true reachable vulnerabilities</strong> isolated in 12.4ms.<br>
+                • <strong>0 false negatives</strong> on static execution paths.
+              </p>
+            </div>
+            <div class="md:col-span-5 p-6 bg-[#ECE8E0] border border-[#D0CBC1]">
+              <div class="font-mono text-xs text-[#5B7C99] mb-6 text-center">[ ALERT COUNT COMPARISON ]</div>
+              <div class="flex items-end justify-center gap-12 h-48 border-b border-[#D0CBC1] pb-2">
+                <div class="flex flex-col items-center">
+                  <span class="font-mono text-base font-bold text-[#1C1F24] mb-2">36</span>
+                  <div class="w-16 bg-[#5B7C99]" style="height: 140px;"></div>
+                  <span class="font-mono text-[10px] text-[#57606A] mt-2 text-center">npm audit<br>(Raw Alarms)</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <span class="font-mono text-base font-bold text-[#E8A33D] mb-2">2</span>
+                  <div class="w-16 bg-[#E8A33D]" style="height: 18px;"></div>
+                  <span class="font-mono text-[10px] text-[#E8A33D] font-bold mt-2 text-center">VibeLens<br>(Reachable)</span>
+                </div>
+              </div>
+            </div>
           </div>
         `
       },
       {
         num: 9,
-        category: "TARGET AUDIENCE // MARKET FIT",
-        title: "Built for the Generative Era: Vibe Coders & Lean Teams",
-        subtitle: "Protecting the fastest builders from the unintended consequences of AI velocity.",
-        notes: "Who is VibeLens for? First, the exploding demographic of AI Vibe Coders—developers building apps in an afternoon with Cursor, Claude, or v0. They don't have time to audit dependencies. Second, lean startups with 3 to 20 engineers and no dedicated security team. They're drowning in Dependabot PRs. VibeLens filters the noise from the tools they already use.",
+        theme: "dark",
+        category: "POSITIONING MAP // WHO IT IS FOR",
+        title: "Where VibeLens Sits in the Developer Security Landscape",
+        notes: "Slide 9 replaces generic persona cards with a clear 2x2 positioning map. On the vertical axis: AI code velocity. On the horizontal axis: Team security expertise. Look at the amber dot in the top-left quadrant: High AI velocity, low dedicated security staff. That is where VibeLens lives: protecting the fastest-moving developers who cannot afford a dedicated AppSec team.",
         html: `
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="p-6 bg-[#09090b] border border-white/10">
-              <div class="font-mono text-xs text-[#06b6d4] font-bold mb-1">PRIMARY PERSONA</div>
-              <h3 class="text-xl font-bold text-white mb-2">AI Vibe Coders & Solo Hackers</h3>
-              <p class="text-xs text-[#06b6d4] italic mb-4">"I want to ship my full-stack app today, not spend 3 hours reading CVE disclosures."</p>
-              <ul class="text-xs text-[#a1a1aa] space-y-2">
-                <li>✓ Building rapid prototypes with Cursor, Claude Code, v0.dev, and Bolt.new.</li>
-                <li>✓ Installs npm packages quickly without reading deep transitive dependencies.</li>
-                <li>✓ Needs non-blocking security guardrails that highlight only fatal zero-day bugs.</li>
-              </ul>
-            </div>
-            <div class="p-6 bg-[#09090b] border border-white/10">
-              <div class="font-mono text-xs text-[#10b981] font-bold mb-1">EXPANSION PERSONA</div>
-              <h3 class="text-xl font-bold text-white mb-2">Lean Startups & Small Dev Teams</h3>
-              <p class="text-xs text-[#10b981] italic mb-4">"We have 8 engineers and zero full-time AppSec staff. Our Dependabot queue is out of control."</p>
-              <ul class="text-xs text-[#a1a1aa] space-y-2">
-                <li>✓ Engineering teams with 3–20 developers shipping daily customer features.</li>
-                <li>✓ Paralyzed by hundreds of Dependabot PRs that break build tests.</li>
-                <li>✓ Needs high-confidence automated PRs gated by local vitest passes.</li>
-              </ul>
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ POSITIONING MAP // WHO IT IS FOR ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#F4F1EA] mb-6">Where VibeLens Sits in the Security Landscape</h2>
+          <div class="p-8 bg-[#22262C] border border-[#2D333B] relative my-auto">
+            <!-- 2x2 Crosshair -->
+            <div class="absolute left-8 right-8 top-1/2 h-px bg-[#2D333B]"></div>
+            <div class="absolute top-8 bottom-8 left-1/2 w-px bg-[#2D333B]"></div>
+            
+            <div class="grid grid-cols-2 gap-12 h-64 font-sans text-xs">
+              <!-- Top Left: Sweet Spot -->
+              <div class="p-4 flex flex-col justify-start">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-4 h-4 rounded-full bg-[#E8A33D]"></div>
+                  <span class="font-serif text-lg font-bold text-[#E8A33D]">VibeLens</span>
+                </div>
+                <p class="text-[#F4F1EA] font-semibold text-xs mb-1">AI Vibe Coders & Lean Startups</p>
+                <p class="text-[#8B949E] text-[11px]">High AI code velocity, 0 dedicated AppSec staff. Needs instant, non-blocking noise filtering.</p>
+              </div>
+              <!-- Top Right: Enterprise -->
+              <div class="p-4 text-right">
+                <span class="font-serif text-sm font-bold text-[#8B949E]">Enterprise AppSec</span>
+                <p class="text-[#57606A] text-[11px] mt-1">Snyk, Veracode, Checkmarx.<br>Heavy compliance, manual review teams.</p>
+              </div>
+              <!-- Bottom Left: Traditional Audits -->
+              <div class="p-4 flex flex-col justify-end">
+                <span class="font-serif text-sm font-bold text-[#8B949E]">Traditional Audits</span>
+                <p class="text-[#57606A] text-[11px] mt-1">npm audit, Dependabot flood.<br>High friction, blind version matching.</p>
+              </div>
+              <!-- Bottom Right: Consultancies -->
+              <div class="p-4 flex flex-col justify-end text-right">
+                <span class="font-serif text-sm font-bold text-[#8B949E]">Manual Pentesting</span>
+                <p class="text-[#57606A] text-[11px] mt-1">Security Consultancies.<br>High cost, slow turnaround.</p>
+              </div>
             </div>
           </div>
         `
       },
       {
         num: 10,
-        category: "UNDER THE HOOD // INDUSTRIAL ARCHITECTURE",
-        title: "The Exploded Optical Engine: 5-Layer Stack Architecture",
-        subtitle: "A pure JavaScript/TypeScript stack running 100% locally on-device in <15ms.",
-        notes: "Here is our stack, modeled as our exploded optical engine. Layer 1: Babel and es-module-lexer parse code on disk. Layer 2: Transformers.js computes on-device embeddings with zero cloud API keys. Layer 3: Our DFS call-graph filters phantom CVEs. Layer 4: Our Universal Tri-Bridge connects to Cursor, Claude, and v0 via MCP and handover files. Layer 5: Three.js renders the 3D software city. It's 100% TypeScript, runs in <15ms, and complies with strict local privacy.",
+        theme: "light",
+        category: "ARCHITECTURE // LEFT-TO-RIGHT ENGINE FLOW",
+        title: "Under the Hood: 4 Outlined Toolchain Components",
+        notes: "Slide 10 details our architecture: clean, outlined boxes with straight lines on warm paper. Notice the amber data path connecting them from left to right: Babel parses the code on-device; our call-graph engine maps the symbol graph; the ReachableSec DFS gate isolates true vulnerabilities; and Three.js plus our MCP bridge surfaces the result to developers and AI coding agents. 100% TypeScript, <15ms execution.",
         html: `
-          <div class="space-y-2 my-6 font-mono text-xs">
-            <div class="p-3 bg-[#09090b] border border-[#06b6d4] flex items-center justify-between"><div class="w-36 text-[#06b6d4] font-bold">RING 01 // COLLECTOR</div><div class="text-white font-bold">@babel/parser + es-module-lexer</div><div class="text-[#a1a1aa]">100% offline local AST parsing</div><div class="text-[#10b981]">[0ms LEAK]</div></div>
-            <div class="p-3 bg-[#09090b] border border-[#f59e0b] flex items-center justify-between"><div class="w-36 text-[#f59e0b] font-bold">RING 02 // HELICOID</div><div class="text-white font-bold">Transformers.js (all-MiniLM WASM)</div><div class="text-[#a1a1aa]">384D on-device semantic embeddings</div><div class="text-[#10b981]">[0 KEYS]</div></div>
-            <div class="p-3 bg-[#09090b] border border-[#ef4444] flex items-center justify-between"><div class="w-36 text-[#ef4444] font-bold">RING 03 // APERTURE</div><div class="text-white font-bold">Deterministic DFS Call-Graph Gate</div><div class="text-[#a1a1aa]">Silences phantom CVEs; isolates sinks</div><div class="text-[#10b981]">[88.6% DROP]</div></div>
-            <div class="p-3 bg-[#09090b] border border-[#10b981] flex items-center justify-between"><div class="w-36 text-[#10b981] font-bold">RING 04 // BAYONET</div><div class="text-white font-bold">Universal Tri-Bridge (MCP + Handover)</div><div class="text-[#a1a1aa]">Connects Cursor, Claude, and v0.dev</div><div class="text-[#10b981]">[3 BRIDGES]</div></div>
-            <div class="p-3 bg-[#09090b] border border-[#3b82f6] flex items-center justify-between"><div class="w-36 text-[#3b82f6] font-bold">RING 05 // SENSOR</div><div class="text-white font-bold">Three.js + React Three Fiber WebGL</div><div class="text-[#a1a1aa]">Deterministic 3D treemap & wiring graph</div><div class="text-[#10b981]">[120 FPS]</div></div>
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ ARCHITECTURE // ENGINE TOOLCHAIN ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#1C1F24] mb-8">Under the Hood: 4 Outlined Toolchain Components</h2>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-auto">
+            <div class="p-5 bg-[#F4F1EA] border border-[#D0CBC1]">
+              <div class="text-[#E8A33D] font-serif font-bold text-lg mb-1">01</div>
+              <div class="font-mono text-[10px] text-[#5B7C99] font-bold mb-3">AST PARSER & LEXER</div>
+              <div class="p-2 bg-[#ECE8E0] font-mono text-xs text-[#1C1F24] font-bold mb-3">@babel/parser + es-module-lexer</div>
+              <p class="text-xs text-[#57606A]">Parses local TS/JS directly on-device. Zero cloud code uploads.</p>
+            </div>
+            <div class="p-5 bg-[#F4F1EA] border border-[#D0CBC1]">
+              <div class="text-[#E8A33D] font-serif font-bold text-lg mb-1">02</div>
+              <div class="font-mono text-[10px] text-[#5B7C99] font-bold mb-3">IMPORT GRAPH ENGINE</div>
+              <div class="p-2 bg-[#ECE8E0] font-mono text-xs text-[#1C1F24] font-bold mb-3">Deterministic Directed DAG</div>
+              <p class="text-xs text-[#57606A]">Constructs in-memory symbol graph connecting routes to deep helpers.</p>
+            </div>
+            <div class="p-5 bg-[#F4F1EA] border border-[#D0CBC1]">
+              <div class="text-[#E8A33D] font-serif font-bold text-lg mb-1">03</div>
+              <div class="font-mono text-[10px] text-[#5B7C99] font-bold mb-3">REACHABLESEC GATE</div>
+              <div class="p-2 bg-[#ECE8E0] font-mono text-xs text-[#1C1F24] font-bold mb-3">DFS Traversal Algorithm</div>
+              <p class="text-xs text-[#57606A]">Traces from entry points to CVE sinks in &lt;15ms.</p>
+            </div>
+            <div class="p-5 bg-[#F4F1EA] border border-[#D0CBC1]">
+              <div class="text-[#E8A33D] font-serif font-bold text-lg mb-1">04</div>
+              <div class="font-mono text-[10px] text-[#5B7C99] font-bold mb-3">SPATIAL & AGENTS</div>
+              <div class="p-2 bg-[#ECE8E0] font-mono text-xs text-[#1C1F24] font-bold mb-3">Three.js + MCP Bridge</div>
+              <p class="text-xs text-[#57606A]">Renders 3D treemap & connects Cursor, Claude, and v0.dev.</p>
+            </div>
           </div>
         `
       },
       {
         num: 11,
-        category: "EXECUTION TIMELINE // 2026 ROADMAP",
-        title: "What We Built for the Hackathon & What Comes Next",
-        subtitle: "A complete, working core today with a focused trajectory for tomorrow.",
-        notes: "Notice our discipline here. For the hackathon, we built and verified ReachableSec and the 3D X-Ray. They are 100% working today. On the right, we present our post-hackathon roadmap: AST de-duplication, context shrinking for prompt compilers, and multi-language support. We present these clearly on the roadmap without pretending they are already finished.",
+        theme: "dark",
+        category: "ROADMAP // THE BUILDER'S PROGRESS",
+        title: "Clear Boundaries: What is Shipped vs. What Comes Next",
+        notes: "Notice our discipline on slide 11. Instead of pretending everything is finished, a single horizon line bisects the slide. The solid white line on the left marks what is built, tested, and verified today: ReachableSec and the 3D X-Ray. The dashed amber line on the right marks our post-hackathon roadmap. That honesty demonstrates maturity and execution discipline.",
         html: `
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="p-6 bg-[#09090b] border border-[#10b981]">
-              <div class="font-mono text-xs text-[#10b981] font-bold mb-3">BUILT FOR HACKATHON // WORKING TODAY</div>
-              <ul class="text-xs space-y-3">
-                <li><strong class="text-white">✓ ReachableSec SAST Engine:</strong> DFS call-graph reachability traversal with 3-tier classification.</li>
-                <li><strong class="text-white">✓ 3D Spatial Treemap & Wiring:</strong> Three.js WebGL canvas with on-demand red laser arcs.</li>
-                <li><strong class="text-white">✓ Exploded Optical Engine:</strong> Hardware caliper scrubber and 5 compound stack layers.</li>
-                <li><strong class="text-white">✓ Metro Grid Calibration:</strong> Calibrates city grid (BLR, SFO, NYC) with aerospace coords.</li>
-                <li><strong class="text-white">✓ Local Verification Gate:</strong> 18/18 unit tests green; pre-push git hook active.</li>
+          <div class="font-mono text-xs text-[#5B7C99] mb-2">[ ROADMAP // THE BUILDER'S PROGRESS ]</div>
+          <h2 class="text-3xl font-serif font-bold text-[#F4F1EA] mb-8">Clear Boundaries: What is Shipped vs. What Comes Next</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto relative">
+            <div class="border-t-2 border-[#F4F1EA] pt-4">
+              <div class="font-serif font-bold text-lg text-[#F4F1EA] mb-3">● BUILT & VERIFIED TODAY</div>
+              <ul class="font-sans text-xs text-[#8B949E] space-y-3">
+                <li><strong class="text-[#F4F1EA]">✓ ReachableSec Static Call-Graph DFS:</strong> 3-tier honest classification.</li>
+                <li><strong class="text-[#F4F1EA]">✓ 3D Spatial Treemap & Wiring:</strong> Three.js canvas with on-demand red laser arcs.</li>
+                <li><strong class="text-[#F4F1EA]">✓ Metro Grid Calibration:</strong> BLR, SFO, NYC, LHR presets.</li>
+                <li><strong class="text-[#F4F1EA]">✓ Local Verification Gate:</strong> 18/18 passing tests with pre-push git hook.</li>
               </ul>
             </div>
-            <div class="p-6 bg-[#09090b] border border-white/10">
-              <div class="font-mono text-xs text-[#06b6d4] font-bold mb-3">PRODUCT ROADMAP // PHASE 2 & 3</div>
-              <ul class="text-xs space-y-3 text-[#a1a1aa]">
-                <li><strong class="text-[#06b6d4]">➔ AST De-Duplication Engine:</strong> Local vector clustering to purge duplicate helper slop.</li>
-                <li><strong class="text-[#06b6d4]">➔ Zero-Slop Prompt Compiler:</strong> Compresses handover AST context to ~140 tokens.</li>
-                <li><strong class="text-[#06b6d4]">➔ 1-Click Test-Gated PRs:</strong> Auto-remediation verifying 'npm test' before opening PRs.</li>
-                <li><strong class="text-[#06b6d4]">➔ Multi-Language Expansion:</strong> Extending reachability graphs to Python AST and Go.</li>
+            <div class="border-t-2 border-dashed border-[#E8A33D] pt-4">
+              <div class="font-serif font-bold text-lg text-[#E8A33D] mb-3">○ NEXT // 2026 ROADMAP</div>
+              <ul class="font-sans text-xs text-[#8B949E] space-y-3">
+                <li><strong class="text-[#E8A33D]">➔ AST Helper De-Duplication:</strong> Vector clustering to purge duplicate slop.</li>
+                <li><strong class="text-[#E8A33D]">➔ Zero-Slop Prompt Compiler:</strong> ~140-token context relay for v0 & Bolt.</li>
+                <li><strong class="text-[#E8A33D]">➔ 1-Click Test-Gated PRs:</strong> Auto-merge only if local vitest passes.</li>
+                <li><strong class="text-[#E8A33D]">➔ Multi-Language Reachability:</strong> Python & Go call-graphs.</li>
               </ul>
             </div>
           </div>
@@ -430,32 +490,27 @@
       },
       {
         num: 12,
-        category: "CALL TO ACTION // CLOSING VISION",
+        theme: "dark",
+        category: "CONCLUSION // THE CRAFTSMAN'S PROMISE",
         title: "Build with the Velocity of AI. Keep the Clarity of a Master Craftsman.",
-        subtitle: "The future of software belongs to builders who pair AI generation with mathematical verification.",
-        notes: "To conclude: We are asking for feedback, mentorship from security architects, and 3 pilot design partner teams to run VibeLens in their daily workflows. In the generative era, developers don't have to choose between AI speed and security integrity. You can build with the velocity of AI, and keep the clarity of a master craftsman. Thank you.",
+        notes: "To conclude: AI coding assistants allow us to build software faster than ever before in human history. But speed without optical inspection creates blindness. VibeLens gives developers and teams the inspection bench they need: mathematical reachability, 100% local privacy, and zero phantom noise. Build with the velocity of AI. Keep the clarity of a master craftsman. Thank you.",
         html: `
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="p-6 bg-[#09090b] border border-[#06b6d4]">
-              <div class="font-mono text-xs text-[#06b6d4] font-bold mb-3">WHAT WE ARE ASKING FROM THE JUDGES</div>
-              <ul class="text-xs space-y-3 text-[#a1a1aa]">
-                <li><strong class="text-white">● Feedback on Static Heuristics:</strong> Insights on handling complex dynamic import edges.</li>
-                <li><strong class="text-white">● Ecosystem Mentorship:</strong> Guidance on integrating directly into CI/CD actions.</li>
-                <li><strong class="text-white">● Design Partner Pilots:</strong> 3 fast-moving engineering teams to run VibeLens.</li>
-              </ul>
+          <div class="font-mono text-xs text-[#5B7C99] mb-4">[ PRASUNEX INNOVATHON 2026 // CONCLUSION ]</div>
+          <div class="my-auto max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-[#F4F1EA] leading-tight mb-8">
+              "Build with the velocity of AI.<br>Keep the clarity of a master craftsman."
+            </h1>
+            <div class="relative w-12 h-12 rounded-full border-2 border-[#E8A33D] flex items-center justify-center mb-6">
+              <div class="w-6 h-6 rounded-full border border-dashed border-[#5B7C99]"></div>
+              <div class="absolute w-2 h-2 rounded-full bg-[#E8A33D]"></div>
             </div>
-            <div class="p-6 bg-[#09090b] border border-[#10b981]">
-              <div class="font-mono text-xs text-[#10b981] font-bold mb-3">OUR COMMITMENT: 100% LOCAL PRIVACY</div>
-              <ul class="text-xs space-y-3 text-[#a1a1aa]">
-                <li><strong class="text-white">● Zero Cloud Code Uploads:</strong> All parsing and graph analysis runs on-device.</li>
-                <li><strong class="text-white">● Zero API Key Tax:</strong> Powered by on-device sentence transformers in WASM.</li>
-                <li><strong class="text-white">● Open Source & Local First:</strong> Built for developer speed and privacy.</li>
-              </ul>
-            </div>
+            <p class="text-sm text-[#8B949E] leading-relaxed mb-6 font-sans">
+              We are seeking mentorship on compiler static analysis heuristics, ecosystem partners, and pilot engineering teams to run VibeLens in daily development.
+            </p>
+            <div class="font-mono text-xs text-[#5B7C99]">github.com/chiraggoenka17512-coder/vibelens</div>
           </div>
-          <div class="p-4 bg-[#111115] border border-[#06b6d4] text-center font-mono">
-            <div class="text-lg font-bold text-white mb-1">"Build with the velocity of AI. Keep the clarity of a master craftsman."</div>
-            <div class="text-xs text-[#06b6d4]">github.com/chiraggoenka17512-coder/vibelens • Prasunex Innovathon 2026</div>
+          <div class="font-mono text-xs text-[#57606A] border-t border-[#2D333B] pt-3">
+            VIBELENS // PRASUNEX 2026
           </div>
         `
       }
@@ -465,10 +520,35 @@
       const stage = document.getElementById("slideStage");
       const indicator = document.getElementById("slideIndicator");
       const notesContent = document.getElementById("notesContent");
-      
-      indicator.innerText = `SLIDE ${String(n).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+      const body = document.getElementById("deckBody");
+      const header = document.getElementById("deckHeader");
+      const footer = document.getElementById("deckFooter");
+      const slidePill = document.getElementById("slidePill");
+      const notesBtn = document.getElementById("notesBtn");
 
-      // If slide 1 to 4, they are pre-rendered in HTML
+      indicator.innerText = `${String(n).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+
+      // Theme toggle for light/dark alternation
+      let isDark = true;
+      if (n === 2 || n === 4 || n === 7 || n === 8 || n === 10) {
+        isDark = false;
+      }
+
+      if (!isDark) {
+        body.className = "h-screen w-screen overflow-hidden flex flex-col justify-between bg-[#F4F1EA] text-[#1C1F24] select-none transition-colors duration-200";
+        header.className = "h-14 border-b border-[#D0CBC1] px-8 flex items-center justify-between bg-[#F4F1EA]/90 backdrop-blur-md z-50 transition-colors duration-200";
+        footer.className = "h-10 border-t border-[#D0CBC1] px-8 flex items-center justify-between font-mono text-[11px] text-[#8C959F] bg-[#F4F1EA] transition-colors duration-200";
+        slidePill.className = "flex items-center gap-3 bg-[#ECE8E0] border border-[#D0CBC1] px-4 py-1 rounded-full font-mono text-xs text-[#1C1F24]";
+        notesBtn.className = "px-3 py-1 bg-[#ECE8E0] hover:bg-black/5 border border-[#D0CBC1] text-[#5B7C99]";
+      } else {
+        body.className = "h-screen w-screen overflow-hidden flex flex-col justify-between bg-[#1C1F24] text-[#F4F1EA] select-none transition-colors duration-200";
+        header.className = "h-14 border-b border-[#2D333B] px-8 flex items-center justify-between bg-[#1C1F24]/90 backdrop-blur-md z-50 transition-colors duration-200";
+        footer.className = "h-10 border-t border-[#2D333B] px-8 flex items-center justify-between font-mono text-[11px] text-[#57606A] bg-[#1C1F24] transition-colors duration-200";
+        slidePill.className = "flex items-center gap-3 bg-[#22262C] border border-[#2D333B] px-4 py-1 rounded-full font-mono text-xs text-[#F4F1EA]";
+        notesBtn.className = "px-3 py-1 bg-[#22262C] hover:bg-white/10 border border-[#2D333B] text-[#5B7C99]";
+      }
+
+      // Check pre-rendered slides 1 to 3
       const existingSlides = stage.querySelectorAll(".slide");
       existingSlides.forEach(s => {
         if (Number(s.getAttribute("data-slide")) === n) {
@@ -481,20 +561,14 @@
         }
       });
 
-      // If slide 5 to 12, render from SLIDES_DATA
+      // Render dynamic slides 4 to 12
       const dynamicContainer = document.getElementById("dynamicSlideContainer");
-      if (n >= 5) {
-        const data = SLIDES_DATA.find(d => d.num === n);
+      if (n >= 4) {
+        const data = SLIDES.find(d => d.num === n);
         if (data) {
           dynamicContainer.innerHTML = `
             <div class="slide slide-active flex-col justify-between h-full py-4" data-slide="${data.num}">
-              <div>
-                <div class="font-mono text-xs text-[#06b6d4] font-bold mb-2">[${data.category}]</div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">${data.title}</h2>
-                <p class="text-sm text-[#a1a1aa]">${data.subtitle}</p>
-              </div>
               ${data.html}
-              <div class="font-mono text-xs text-[#71717a]">[VIBELENS INDUSTRIAL TELEMETRY // SLIDE ${String(n).padStart(2, '0')}]</div>
             </div>
           `;
           notesContent.innerText = data.notes;
@@ -523,10 +597,10 @@
       const state = document.getElementById("notesState");
       if (drawer.classList.contains("hidden")) {
         drawer.classList.remove("hidden");
-        state.innerText = "Visible";
+        state.innerText = "On";
       } else {
         drawer.classList.add("hidden");
-        state.innerText = "Hidden";
+        state.innerText = "Off";
       }
     }
 
