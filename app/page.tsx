@@ -7,6 +7,7 @@ import { SastTester } from "../src/components/features/sast-tester";
 import { BlastRadiusTester } from "../src/components/features/blast-radius-tester";
 import { CliSentinelTester } from "../src/components/features/cli-sentinel-tester";
 import { OpticalSlider } from "../src/components/features/optical-slider";
+import { ExplodedLensEngine } from "../src/components/telemetry/exploded-lens-engine";
 
 export default function Home() {
   const [bilingualMode, setBilingualMode] = useState<"plain" | "code">("plain");
@@ -95,6 +96,12 @@ export default function Home() {
             className="px-2.5 py-1 bg-[#09090b] hover:bg-white/10 border border-white/10 text-[#06b6d4] transition-colors"
           >
             05. Optical De-Slop Loupe (Chirag)
+          </a>
+          <a
+            href="#section-lens"
+            className="px-2.5 py-1 bg-[#09090b] hover:bg-white/10 border border-white/10 text-[#10b981] transition-colors"
+          >
+            06. Exploded Optical Engine (Stack & Architecture)
           </a>
         </div>
       </nav>
@@ -195,6 +202,11 @@ export default function Home() {
       {/* 8. Section 05: Chirag's Optical Diagnostic Lens (De-Slop Slider) */}
       <section id="section-optical" className="px-6 py-10 max-w-7xl mx-auto border-b border-white/10">
         <OpticalSlider />
+      </section>
+
+      {/* 9. Section 06: Exploded Optical Engine Architecture (Anime.js + Zephium Telemetry) */}
+      <section id="section-lens" className="px-6 py-10 max-w-7xl mx-auto border-b border-white/10">
+        <ExplodedLensEngine />
       </section>
 
       {/* 9. The 5-Act Builder Journey Timeline */}
