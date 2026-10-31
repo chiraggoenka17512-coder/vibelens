@@ -13,7 +13,7 @@
 | **👑 Chirag** | **Master UI & Storytelling Landing Page** | Whole UI shell, 5-Act Builder Journey, Bilingual Toggle, Optical Diagnostic Lens | [`team/Chirag/`](./Chirag/README.md) |
 | **🛡️ Rajveer** | **ReachableSec SAST & ContextRelay State** | `@babel/parser` AST call-graph, 4-tier reachability classifier, `.vibelens/handover.json` manifest | [`team/Rajveer/`](./Rajveer/README.md) |
 | **🌌 Vihaan** | **3D Spatial X-Ray Galaxy & ContextRelay MCP** | Three.js WebGL canvas (`@react-three/fiber`), node shaders, red laser tracers, MCP server tools | [`team/Vihaan/`](./Vihaan/README.md) |
-| **🔍 Aaryan** | **Blast Radius Inspector & Detail HUD** | Slide-out glassmorphic drawer, upstream breaking callers, downstream dependencies, test-gated PR | [`team/Aaryan/`](./Aaryan/README.md) |
+| **🔍 Aaryan** | **Blast Radius HUD & Universal Agent Bridge** | Slide-out drawer, breaking callers, test-gated PR, REST API gateway & 1-Click Clipboard Relay for Web AI | [`team/Aaryan/`](./Aaryan/README.md) |
 | **🛡️ Archit** | **VibeWatcher CLI Sentinel** | `npx vibelens watch` 1Hz daemon (`commander` + `chokidar`), terminal alert UI, 1-key auto-link | [`team/Archit/`](./Archit/README.md) |
 
 ---
@@ -31,10 +31,11 @@
                  ┌──────────────────────────────┼──────────────────────────────┐
                  ▼                              ▼                              ▼
   ┌─────────────────────────────┐┌─────────────────────────────┐┌─────────────────────────────┐
-  │     Vihaan (3D Galaxy)      ││    Aaryan (Blast Radius)    ││   Vihaan (MCP Context)      │
+  │     Vihaan (3D Galaxy)      ││    Aaryan (Blast & Bridge)  ││   Vihaan (MCP Context)      │
   │ • Ingests Rajveer's JSON DAG││ • Traverses DAG callers/deps││ • Serves handover.json via  │
   │ • Renders 3D nodes & lasers ││ • Opens slide-out HUD on tap││   MCP to Cursor/Claude      │
   │ • Fires node click events   ││ • Runs test-gated safe PR   ││ • Prevents duplicate slop   │
+  │                             ││ • Local REST API & Web Relay││                             │
   └──────────────┬──────────────┘└──────────────┬──────────────┘└─────────────────────────────┘
                  │                              │
                  └──────────────────────┬───────┘

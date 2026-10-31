@@ -116,6 +116,45 @@ ContextRelay solves this by maintaining a deterministic, machine-readable **AST 
 1. **MCP Tool Handshake (`vibelens_get_handover`):** Cursor and Claude Code query this tool on initialization (consuming 0 prompt tokens).
 2. **Deterministic Instruction Guard (`.cursorrules` / `.claude.md`):** Agents are instructed to read `.vibelens/handover.json` before creating new helper functions, preventing duplication at the source across all agent switches.
 
+### 6.4 Tri-Bridge Universal Agent & IDE Connection Architecture (Apps & Web)
+
+> **Assigned Lead:** 🔍 **Aaryan** (`team/Aaryan/README.md`)  
+> **Status:** APPROVED & ARCHITECTED  
+> **Objective:** Connect effortlessly to every coding environment—whether desktop apps (Cursor, Windsurf, VS Code, Claude Code) or web platforms (v0.dev, Bolt.new, Lovable.dev, Replit, ChatGPT Canvas).
+
+```
+                  ┌──────────────────────────────────────────────┐
+                  │             VIBELENS CORE HUB                │
+                  │       (Local Engine & 3D Web Cockpit)        │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+         ┌───────────────────────────────┼───────────────────────────────┐
+         ▼                               ▼                               ▼
+┌────────────────────────────────┐ ┌───────────────────────────┐ ┌────────────────────────────────┐
+│      BRIDGE 1: MCP SERVER      │ │  BRIDGE 2: FILE CONTRACT  │ │    BRIDGE 3: LOCAL REST API    │
+│ (Desktop IDE Apps & Terminals) │ │  (Web AI Cloud Platforms) │ │  (Browser Extensions & DApps) │
+├────────────────────────────────┤ ├───────────────────────────┤ ├────────────────────────────────┤
+│ • Cursor IDE (App)             │ │ • v0.dev (Web)            │ │ • Chrome / Browser Extensions  │
+│ • Claude Code CLI (Terminal)   │ │ • Bolt.new (Web)          │ │ • Web IDEs (Replit/Codespaces) │
+│ • Windsurf / Cascade (App)     │ │ • Lovable.dev (Web)       │ │ • Localhost curl scripts       │
+│ • VS Code / Antigravity        │ │ • ChatGPT Canvas (Web)    │ │ • CORS: Access-Control-Allow:* │
+│ ➔ Stdio/HTTP MCP JSON-RPC      │ │ ➔ .vibelens/handover.json │ │ ➔ GET  /api/vibelens/handover  │
+│ ➔ Tool: vibelens_get_handover  │ │ ➔ 1-Click Clipboard Relay │ │ ➔ POST /api/vibelens/check-util│
+└────────────────────────────────┘ └───────────────────────────┘ └────────────────────────────────┘
+```
+
+#### Detailed Bridge Specifications
+1. **Bridge 1 (Desktop IDE Apps via MCP):**
+   - Implemented via `@modelcontextprotocol/sdk` over stdio/HTTP (`bin/mcp-server.js`).
+   - Automatically queried by desktop AI agents before generating code.
+2. **Bridge 2 (Web AI Platforms via Universal File Contract & 1-Click Clipboard Relay):**
+   - Web platforms (v0.dev, Bolt.new, Lovable) cannot spawn local background processes, but all read repository files and system prompts.
+   - VibeLens maintains `.vibelens/handover.json` and root instruction anchors (`AGENTS.md`, `.cursorrules`, `CLAUDE.md`).
+   - The VibeLens 3D UI provides a 1-click `[COPY CONTEXT RELAY]` button that copies a compressed 380-token invariant block ready to paste into the first prompt of any web AI session.
+3. **Bridge 3 (Web Extensions & Cloud Agents via Local CORS REST Gateway):**
+   - Local Next.js API routes (`app/api/vibelens/handover/route.ts` and `app/api/vibelens/check-utility/route.ts`) with open CORS headers (`Access-Control-Allow-Origin: *`).
+   - Allows browser extensions and web tools to query the active AST call-graph and check whether a proposed npm package contains reachable CVEs before installation.
+
 ---
 
 ## 7. The Blast Radius Inspector (Solving The Black-Box Terror)
