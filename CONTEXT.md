@@ -25,7 +25,7 @@ VibeLens cures the **"48-Hour Vibe Coding Hangover"** and enterprise DevSecOps a
 4. **Automated Safety Gate:** Never open a Pull Request without running local unit tests (`npm test` / `vitest`).
 5. **Pure JS/TS Stack:** No Python, Rust, or Go binary wrappers.
 6. **Local Embeddings Only:** Embedding inference runs 100% locally via Transformers.js in WebAssembly/Node.js. Zero API keys, zero cloud leaks, $0.00 token cost.
-7. **ZERO GRADIENTS (CrashLens Invariant):** All surfaces are solid obsidian/matte planes (`#060608`, `#09090b`, `#111115`) with sharp 1px borders (`border-white/10`) and Geist Mono hardware telemetry.
+7. **ZERO GRADIENTS & The Zephium Aesthetic Benchmark:** All surfaces are solid graphite matte planes (`#09090b`, `#111113`, `#18181b`) with hairline borders (`rgba(255,255,255,0.07)`), vibrant translucent glass capsules (`backdrop-blur-md bg-white/5`), halftone dot-matrix stippling, and Geist Mono telemetry inspired by `zephium.app` and `zephium-browser/website`.
 
 ---
 

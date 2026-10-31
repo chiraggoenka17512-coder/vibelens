@@ -34,6 +34,11 @@ VibeLens interfaces follow the **CrashLens Industrial Telemetry** design framewo
    - 🟠 **Orange (`#f97316`):** Likely indirect paths / Blast radius breaking callers.
    - 🟡 **Yellow (`#f59e0b`):** AI Vibe Slop / Duplicate helper clusters / Unknown dynamic code.
    - 🟢 **Emerald (`#10b981`):** Healthy code / Silenced phantom CVE shields / Green test passes.
+7. **The Zephium Aesthetic Benchmark (`zephium.app` & `zephium-browser/website`):**
+   - **Graphite Neutral Tokens:** Ground (`#09090b`), Plate (`#111113`), Surface (`#18181b`), Raised (`#212125`), Hairline borders (`rgb(255 255 255 / 0.07)` to `0.12`).
+   - **Halftone Dither & Sky Dissolve:** Cloud and atmospheric backgrounds dissolving into pitch-black `#09090b` ground via mathematical halftone dot-matrix stippling.
+   - **Vibrancy Glass & Floating Capsules:** Hairline translucent pills (`backdrop-blur-md bg-white/5 border border-white/10 rounded-full`), top-notch omnibar, floating left dock rail, and bottom telemetry pill widgets.
+   - **Geometric Stencil Display:** Geometric tracked wordmark and clean monospace status metrics. Zero generic AI slop.
 
 ---
 
