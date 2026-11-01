@@ -1,9 +1,30 @@
-# 🌌 Vihaan
+# 🏙️ Vihaan
 
 > **Assigned Focus:** 3D Spatial X-Ray City View, Personalized Metro Grids & MCP Server Tools  
-> **Relevant Specs:** `docs/specs/03-3d-galaxy-canvas.md`, `docs/specs/06-zero-token-context-relay.md`, `docs/specs/01-mcp-prevention.md`  
+> **Relevant Specs:** `docs/specs/03-3d-city-canvas.md`, `docs/specs/06-zero-token-context-relay.md`, `docs/specs/01-mcp-prevention.md`  
 > **Target Branch:** `feat/3d-xray-vihaan`  
 > **Target Test Suites:** `tests/layout.test.ts`, `tests/pins.test.ts`, `tests/metro.test.ts`
+
+---
+
+## 📜 3D "Repo as a City" Section Implementation Prompts (Prompts 0 - 11)
+
+> **Workflow Rule:** Send Prompt 0 first, then each prompt in numerical order. Each prompt builds upon the previous, self-contained and verified step, ending with an explicit Acceptance Check. Always attach the reference screenshot to every prompt sent to an AI assistant.
+
+| Step | File | Prompt Title | Focus & Acceptance Criteria |
+| :---: | :--- | :--- | :--- |
+| **0** | [`0.md`](./0.md) | **Ground Rules & Design System** | Standalone HTML contract (`repo-city.html`), exact CDN libraries, color tokens, font specs, zero-drag invariant. |
+| **1** | [`1.md`](./1.md) | **Page Section & Layout** | Full-width `#repo-city` section, eyebrow, serif heading, bottom-left dark translucent panel, responsive mobile stacking. |
+| **2** | [`2.md`](./2.md) | **Three.js Scene & Isometric Camera** | WebGL renderer setup, transparent canvas, OrthographicCamera at `(20, 20, 20)`, lighting, invisible ground plane & grid helper. |
+| **3** | [`3.md`](./3.md) | **Data Loader & Placeholder Data** | Decoupled `loadCityData()`, seeded `mulberry32(42)`, 64 deterministic files, LOC distribution, flagged and dead code flags. |
+| **4** | [`4.md`](./4.md) | **Building Geometry & Materials** | `0.9 x 0.9` footprints, base pivot anchor at `y=0`, multi-face material arrays, slate blue, orange flagged, and ghosted dead code outlines. |
+| **5** | [`5.md`](./5.md) | **City Layout by Folder Districts** | Deterministic 3x2 folder district grid, 4x3 subgrid slots, inter-district arterial gaps, centered coordinates. |
+| **6** | [`6.md`](./6.md) | **Entry Animation (Back-to-Front Wave)** | GSAP ScrollTrigger one-time wave, staggered diagonal rise from back to front over 1.2s, camera swoop from `(14, 26, 26)`. |
+| **7** | [`7.md`](./7.md) | **Idle Sway** | Subtle `±2°` harmonic orbital camera drift (25s period), frozen when hovering or out of viewport. |
+| **8** | [`8.md`](./8.md) | **Hover Lift & Label** | Layer-filtered raycasting on live buildings, `0.15` unit tactile lift, screen-projected HTML tooltip with path, LOC, and flag status. |
+| **9** | [`9.md`](./9.md) | **Click-to-Trace Red Arc** | Public route entry marker at `(-10.5, 0.1, 0)`, animated quadratic bezier laser arc to clicked flagged building, breathing pulse, clean disposal. |
+| **10** | [`10.md`](./10.md) | **Scroll Integration & Final Polish** | ScrollTrigger 120% section pinning, master timeline hook `window.repoCityTimeline()`, full garbage cleanup `destroy()`, zero console logs. |
+| **11** | [`11.md`](./11.md) | **Final QA Against Screenshot** | 20-point verification checklist (PASS/FAIL) checking typography, colors, animations, responsive behavior, and clean runtime. |
 
 ---
 
